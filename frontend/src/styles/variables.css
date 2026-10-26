@@ -1,0 +1,39 @@
+:root {
+  /* Brand colors */
+  --color-primary: #ea580c;
+  --color-accent: #f97316;
+  --color-accent-hover: #ea580c;
+  --color-accent-soft: #fff0e4;
+  --color-accent-light: #fdba74;
+
+  /* Backgrounds */
+  --color-white: #ffffff;
+  --color-background: #f5f7f1;
+  --color-surface: #ffffff;
+
+  /* Text */
+  --color-text: #102527;
+  --color-text-muted: #526363;
+  --color-text-light: #e2e8e6;
+
+  /* Layout */
+  --container-width: 1540px;
+  --page-gutter: clamp(20px, 4vw, 64px);
+  --section-spacing: clamp(64px, 7vw, 112px);
+  --header-height: 84px;
+
+  /* Typography */
+  --font-family: "Poppins", Arial, sans-serif;
+
+  --font-hero: clamp(2.27em, 4.2vw, 4rem);
+  --font-h2: clamp(2rem, 3.6vw, 3.625rem);
+  --font-h3: clamp(1.5rem, 2.3vw, 2rem);
+  --font-h4: clamp(1rem, 1.6vw, 1.2rem);
+  --font-body: clamp(1rem, 1.3vw, 1.3125rem);
+
+  /* Other */
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --transition: 0.25s ease;
+}
+

@@ -1,0 +1,86 @@
+.preview-hero {
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+}
+
+.preview-hero__title {
+  max-width: 1050px;
+  margin: 24px 0 28px;
+}
+
+.preview-hero__description {
+  max-width: 850px;
+  color: var(--color-text-light);
+}
+
+.preview-eyebrow {
+  color: var(--color-accent-light);
+}
+
+.preview-eyebrow--light {
+  color: var(--color-accent-hover);
+}
+
+.preview-actions {
+  margin-top: 36px;
+}
+
+.preview-button {
+  display: inline-flex;
+  padding: 15px 28px;
+  background: var(--color-accent);
+  color: var(--color-white);
+  border-radius: var(--radius-sm);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.preview-button:hover {
+  background: var(--color-accent-hover);
+}
+
+.preview-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.preview-content h2 {
+  max-width: 1450px;
+}
+
+.preview-content h3 {
+  margin-top: 20px;
+}
+
+.preview-content p {
+  max-width: 1400px;
+}
+
+@media (max-width: 768px) {
+  .preview-hero {
+    min-height: 550px;
+  }
+
+  .preview-hero__title {
+    margin: 20px 0 24px;
+  }
+
+  .preview-content {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .preview-hero {
+    min-height: 520px;
+  }
+
+  .preview-button {
+    width: 100%;
+    font-size: 17px;
+    justify-content: center;
+  }
+}

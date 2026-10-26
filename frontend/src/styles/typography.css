@@ -1,0 +1,52 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-family);
+  color: inherit;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+}
+
+h1,
+.heading-hero {
+  font-size: var(--font-hero);
+  line-height: 1.13;
+}
+
+h2,
+.heading-section {
+  font-size: var(--font-h2);
+  line-height: 1.18;
+}
+
+h3 {
+  font-size: var(--font-h3);
+  line-height: 1.25;
+}
+
+p,
+.body-text {
+  font-size: var(--font-body);
+  line-height: 1.55;
+}
+
+.eyebrow {
+  display: block;
+  font-size: var(--font-h4);
+  font-weight: 600;
+  letter-spacing: 0.075em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
