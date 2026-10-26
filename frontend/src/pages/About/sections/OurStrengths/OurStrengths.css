@@ -1,0 +1,176 @@
+/* =========================================
+   OUR STRENGTHS SECTION
+========================================= */
+
+.our-strengths {
+  background-color: var(--color-white);
+}
+
+/* ===== TWO COLUMN LAYOUT ===== */
+
+.our-strengths__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(35px, 5vw, 75px);
+  align-items: stretch;
+}
+
+/* ===== LEFT CONTENT ===== */
+
+.our-strengths__content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* ===== MAIN SECTION HEADING ===== */
+
+.our-strengths__title {
+  font-size: var(--font-h3);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.025em;
+
+  color: var(--color-text);
+  margin: 0 0 28px;
+}
+
+/* ===== STRENGTH ITEMS ===== */
+
+.our-strengths__list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.our-strengths__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+/* ===== CHECK ICON ===== */
+
+.our-strengths__icon {
+  width: 52px;
+  height: 52px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 3px solid var(--color-accent);
+  border-radius: 50%;
+  color: var(--color-accent);
+}
+
+/* ===== ITEM CONTENT ===== */
+
+.our-strengths__item-content {
+  min-width: 0;
+}
+
+.our-strengths__item-content h3 {
+  font-size: clamp(1.125rem, 1.6vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.025em;
+
+  margin: 0 0 5px;
+  color: var(--color-text);
+}
+
+.our-strengths__item-content p {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+/* ===== RIGHT IMAGE ===== */
+
+.our-strengths__image-wrapper {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.our-strengths__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .our-strengths__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .our-strengths__title {
+    margin-bottom: 24px;
+  }
+
+  .our-strengths__list {
+    gap: 20px;
+  }
+
+  .our-strengths__image {
+    height: 380px;
+    min-height: 0;
+  }
+}
+
+/* =========================================
+   IPHONE & MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .our-strengths__title {
+    font-size: 26px;
+    margin-bottom: 22px;
+    line-height: 1.2;
+  }
+
+  .our-strengths__list {
+    gap: 20px;
+  }
+
+  .our-strengths__item {
+    gap: 14px;
+  }
+
+  .our-strengths__icon {
+    width: 44px;
+    height: 44px;
+    border-width: 2px;
+  }
+
+  .our-strengths__icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .our-strengths__item-content h3 {
+    font-size: 19px;
+    line-height: 1.3;
+    margin-bottom: 5px;
+  }
+
+  .our-strengths__item-content p {
+    line-height: 1.55;
+  }
+
+  .our-strengths__image {
+    height: 320px;
+    min-height: 0;
+  }
+}

@@ -1,0 +1,41 @@
+/* =========================================
+   ABOUT PAGE
+========================================= */
+
+.about-page {
+  width: 100%;
+  background-color: var(--color-white);
+}
+
+/* ===== SECTION BACKGROUNDS ===== */
+
+.about-page .about-intro,
+.about-page .our-strengths {
+  background-color: var(--color-white);
+}
+
+/* ===== DESKTOP SECTION SPACING ===== */
+
+.about-page .about-intro {
+  padding-top: 65px;
+  padding-bottom: 30px;
+}
+
+.about-page .our-strengths {
+  padding-top: 25px;
+  padding-bottom: 75px;
+}
+
+/* ===== TABLET & MOBILE ===== */
+
+@media (max-width: 768px) {
+  .about-page .about-intro {
+    padding-top: 45px;
+    padding-bottom: 20px;
+  }
+
+  .about-page .our-strengths {
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+}

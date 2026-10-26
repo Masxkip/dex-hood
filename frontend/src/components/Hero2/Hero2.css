@@ -1,0 +1,79 @@
+/* ===== HERO 2 ===== */
+
+.hero2 {
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: var(--color-white);
+}
+
+.hero2 .hero2__container {
+  width: 100%;
+  padding-top: 140px;
+  padding-bottom: 80px;
+}
+
+.hero2 .hero2__content {
+  width: 100%;
+  max-width: 1050px;
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero2 .hero2__title {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 0 28px;
+
+  font-size: var(--font-section, 3rem);
+  line-height: 1.18;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.hero2 .hero2__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: fit-content;
+}
+
+/* ===== TABLET ===== */
+
+@media (max-width: 768px) {
+  .hero2 .hero2__container {
+    padding-block: 45px;
+  }
+}
+
+/* ===== IPHONE & PRO MAX ===== */
+
+@media (max-width: 480px) {
+  .hero2 .hero2__container {
+    padding-block: 120px;
+  }
+
+  .hero2 .hero2__title {
+    font-size: var(--font-section, 2rem);
+    margin-bottom: 24px;
+  }
+
+  .hero2 .hero2__button {
+    width: calc(100% - 40px);
+    max-width: 400px;
+    margin-inline: auto;
+    justify-content: center;
+  }
+}
