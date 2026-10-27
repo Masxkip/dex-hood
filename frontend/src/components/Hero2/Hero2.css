@@ -37,7 +37,7 @@
 
   font-size: var(--font-section, 3rem);
   line-height: 1.18;
-  font-weight: 700;
+  font-weight: var(--font-weight-heading, 500);
   text-align: center;
   color: var(--color-white);
 }
@@ -62,7 +62,7 @@
 
 @media (max-width: 480px) {
   .hero2 .hero2__container {
-    padding-block: 120px;
+    padding-block: 110px;
   }
 
   .hero2 .hero2__title {
@@ -75,5 +75,52 @@
     max-width: 400px;
     margin-inline: auto;
     justify-content: center;
+    margin-bottom: -18px;
+  }
+}
+
+
+
+/* =========================================
+   HERO 2 - OPTIONAL DESCRIPTION
+========================================= */
+
+/* Reduce spacing when description is present */
+
+.hero2 .hero2__title--with-description {
+  margin-bottom: 16px;
+}
+
+/* DESCRIPTION */
+
+.hero2 .hero2__description {
+  width: 100%;
+  max-width: 780px;
+
+  margin: 0 0 30px;
+
+  font-family: var(--font-family);
+  font-size: clamp(1rem, 1.25vw, 1.2rem);
+  font-weight: var(--font-weight-body, 500);
+
+  line-height: 1.65;
+  text-align: center;
+
+  color: var(--color-text-light);
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .hero2 .hero2__title--with-description {
+    margin-bottom: 14px;
+  }
+
+  .hero2 .hero2__description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 26px;
   }
 }

@@ -613,3 +613,23 @@
     transition: none;
   }
 }
+
+/* ===== HEADER ===== */
+
+.desktop-nav__link {
+  font-weight: var(--font-weight-navigation);
+}
+
+.desktop-nav__dropdown a {
+  font-weight: var(--font-weight-navigation);
+}
+
+.header-button {
+  font-weight: var(--font-weight-button);
+}
+
+/* ===== MOBILE NAV ===== */
+
+.mobile-nav__link {
+  font-weight: var(--font-weight-navigation);
+}

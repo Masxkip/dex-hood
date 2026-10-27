@@ -1,20 +1,29 @@
 
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { ChevronDown, ArrowRight } from "lucide-react";
+
 import { navigationLinks } from "./navigationData";
 
-export default function MobileNav({ isOpen, onClose, phoneNumber }) {
+export default function MobileNav({
+  isOpen,
+  onClose,
+  phoneNumber,
+}) {
   const [expandedMenu, setExpandedMenu] = useState(null);
 
   const touchStartY = useRef(null);
   const menuRef = useRef(null);
 
-  // Lock body scrolling while the menu is open
-  // and allow closing with the Escape key.
+  /* =========================================
+     BODY SCROLL LOCK & ESCAPE KEY
+  ========================================= */
+
   useEffect(() => {
     if (!isOpen) return;
 
     const previousOverflow = document.body.style.overflow;
+
     document.body.style.overflow = "hidden";
 
     const handleEscape = (event) => {
@@ -26,7 +35,9 @@ export default function MobileNav({ isOpen, onClose, phoneNumber }) {
     window.addEventListener("keydown", handleEscape);
 
     const focusFrame = requestAnimationFrame(() => {
-      menuRef.current?.focus({ preventScroll: true });
+      menuRef.current?.focus({
+        preventScroll: true,
+      });
     });
 
     return () => {
@@ -36,13 +47,19 @@ export default function MobileNav({ isOpen, onClose, phoneNumber }) {
     };
   }, [isOpen, onClose]);
 
-  // Close the menu and reset dropdowns together.
+  /* =========================================
+     CLOSE MENU
+  ========================================= */
+
   const handleClose = () => {
     setExpandedMenu(null);
     onClose();
   };
 
-  // Swipe upward to close the mobile menu.
+  /* =========================================
+     MOBILE SWIPE HANDLING
+  ========================================= */
+
   const handleTouchStart = (event) => {
     touchStartY.current = event.touches[0].clientY;
   };
@@ -51,16 +68,23 @@ export default function MobileNav({ isOpen, onClose, phoneNumber }) {
     if (touchStartY.current === null) return;
 
     const distance =
-      touchStartY.current - event.changedTouches[0].clientY;
+      touchStartY.current -
+      event.changedTouches[0].clientY;
 
     touchStartY.current = null;
 
-    if (distance > 90 && menuRef.current?.scrollTop === 0) {
+    if (
+      distance > 90 &&
+      menuRef.current?.scrollTop === 0
+    ) {
       handleClose();
     }
   };
 
-  // Expand or collapse dropdowns.
+  /* =========================================
+     DROPDOWN TOGGLE
+  ========================================= */
+
   const toggleDropdown = (label) => {
     setExpandedMenu((current) =>
       current === label ? null : label
@@ -71,7 +95,9 @@ export default function MobileNav({ isOpen, onClose, phoneNumber }) {
     <nav
       id="mobile-navigation"
       ref={menuRef}
-      className={`mobile-nav ${isOpen ? "mobile-nav--open" : ""}`}
+      className={`mobile-nav ${
+        isOpen ? "mobile-nav--open" : ""
+      }`}
       aria-label="Mobile navigation"
       aria-hidden={!isOpen}
       inert={!isOpen}
@@ -81,18 +107,25 @@ export default function MobileNav({ isOpen, onClose, phoneNumber }) {
     >
       <div className="mobile-nav__inner">
 
-        {/* NAVIGATION LINKS */}
+        {/* ===== NAVIGATION LINKS ===== */}
+
         <div className="mobile-nav__links">
           {navigationLinks.map((item) => (
-            <div className="mobile-nav__item" key={item.label}>
-
+            <div
+              className="mobile-nav__item"
+              key={item.label}
+            >
               {item.children ? (
                 <>
                   <button
                     type="button"
                     className="mobile-nav__link mobile-nav__dropdown-toggle"
-                    onClick={() => toggleDropdown(item.label)}
-                    aria-expanded={expandedMenu === item.label}
+                    onClick={() =>
+                      toggleDropdown(item.label)
+                    }
+                    aria-expanded={
+                      expandedMenu === item.label
+                    }
                   >
                     <span>{item.label}</span>
 
@@ -106,52 +139,61 @@ export default function MobileNav({ isOpen, onClose, phoneNumber }) {
                     />
                   </button>
 
+                  {/* ===== DROPDOWN LINKS ===== */}
+
                   <div
                     className={`mobile-nav__submenu ${
                       expandedMenu === item.label
                         ? "is-expanded"
                         : ""
                     }`}
-                    inert={expandedMenu !== item.label || !isOpen}
+                    inert={
+                      expandedMenu !== item.label ||
+                      !isOpen
+                    }
                   >
                     <div className="mobile-nav__submenu-inner">
                       {item.children.map((child) => (
-                        <a
+                        <Link
                           key={child.href}
-                          href={child.href}
+                          to={child.href}
                           onClick={handleClose}
                         >
                           {child.label}
-                        </a>
+                        </Link>
                       ))}
                     </div>
                   </div>
                 </>
               ) : (
-                <a
+                <Link
                   className="mobile-nav__link"
-                  href={item.href}
+                  to={item.href}
                   onClick={handleClose}
                 >
                   {item.label}
-                </a>
+                </Link>
               )}
-
             </div>
           ))}
         </div>
 
-        {/* MOBILE BUTTONS */}
+        {/* ===== MOBILE ACTION BUTTONS ===== */}
+
         <div className="mobile-nav__actions">
 
-          <a
-            href="/contact"
+          {/* CONSULTATION BUTTON */}
+
+          <Link
+            to="/contact"
             className="header-button header-button--primary"
             onClick={handleClose}
           >
             Schedule a Consultation
             <ArrowRight size={21} />
-          </a>
+          </Link>
+
+          {/* PHONE BUTTON */}
 
           {phoneNumber ? (
             <a
@@ -168,7 +210,6 @@ export default function MobileNav({ isOpen, onClose, phoneNumber }) {
               <ArrowRight size={21} />
             </span>
           )}
-
         </div>
       </div>
     </nav>

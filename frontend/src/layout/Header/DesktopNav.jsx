@@ -1,10 +1,18 @@
+
+import { Link } from "react-router-dom";
 import { navigationLinks } from "./navigationData";
 
 export default function DesktopNav() {
   return (
-    <nav className="desktop-nav" aria-label="Desktop navigation">
+    <nav
+      className="desktop-nav"
+      aria-label="Desktop navigation"
+    >
       {navigationLinks.map((item) => (
-        <div className="desktop-nav__item" key={item.label}>
+        <div
+          className="desktop-nav__item"
+          key={item.label}
+        >
           {item.children ? (
             <>
               <button
@@ -18,16 +26,22 @@ export default function DesktopNav() {
 
               <div className="desktop-nav__dropdown">
                 {item.children.map((child) => (
-                  <a href={child.href} key={child.href}>
+                  <Link
+                    to={child.href}
+                    key={child.href}
+                  >
                     {child.label}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </>
           ) : (
-            <a className="desktop-nav__link" href={item.href}>
+            <Link
+              className="desktop-nav__link"
+              to={item.href}
+            >
               {item.label}
-            </a>
+            </Link>
           )}
         </div>
       ))}

@@ -1,13 +1,15 @@
+
 import { useCallback, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Menu, X, ArrowRight, Phone } from "lucide-react";
+
 import logo from "../../assets/h1.jpg";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
 
 import "./Header.css";
 
-// Replace with your actual business phone number.
-// Keep digits and an optional leading + only.
+// Add your actual business phone number when available.
 const PHONE_NUMBER = "";
 
 export default function Header() {
@@ -18,6 +20,8 @@ export default function Header() {
   const closeMenu = useCallback(() => {
     setMenuOpen(false);
   }, []);
+
+  /* ===== SCROLL DETECTION ===== */
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,6 +39,8 @@ export default function Header() {
     };
   }, []);
 
+  /* ===== WINDOW RESIZE ===== */
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 1100) {
@@ -49,40 +55,53 @@ export default function Header() {
     };
   }, [closeMenu]);
 
+  /* ===== HEADER CLASSES ===== */
+
   const headerClasses = [
     "site-header",
     isScrolled ? "site-header--scrolled" : "",
     menuOpen ? "site-header--menu-open" : "",
-  ].filter(Boolean).join(" ");
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <header className={headerClasses}>
       <div className="container header-container">
-        <a
-          href="/"
+
+        {/* ===== LOGO ===== */}
+
+        <Link
+          to="/"
           className="header-logo"
           aria-label="HoodClean Home"
           onClick={closeMenu}
         >
           <img src={logo} alt="HoodClean" />
-        </a>
+        </Link>
+
+        {/* ===== DESKTOP NAVIGATION ===== */}
 
         <DesktopNav />
 
+        {/* ===== HEADER ACTIONS ===== */}
+
         <div className="header-actions">
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="header-button header-button--primary"
           >
             Schedule a Consultation
             <ArrowRight size={19} />
-          </a>
+          </Link>
 
           {PHONE_NUMBER ? (
             <button
               type="button"
               className="header-button header-button--phone"
-              onClick={() => setShowNumber(!showNumber)}
+              onClick={() =>
+                setShowNumber((current) => !current)
+              }
             >
               <Phone size={18} />
               {showNumber ? PHONE_NUMBER : "Show Number"}
@@ -95,28 +114,36 @@ export default function Header() {
           )}
         </div>
 
+        {/* ===== MOBILE MENU TOGGLE ===== */}
+
         <button
           type="button"
           className="menu-toggle"
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-label={
+            menuOpen ? "Close menu" : "Open menu"
+          }
           aria-expanded={menuOpen}
           aria-controls="mobile-navigation"
-          onClick={() => setMenuOpen((current) => !current)}
+          onClick={() =>
+            setMenuOpen((current) => !current)
+          }
         >
           {menuOpen ? (
-              <X size={34} strokeWidth={2.2} />
-            ) : (
-              <Menu size={34} strokeWidth={2.2} />
-            )}
+            <X size={34} strokeWidth={2.2} />
+          ) : (
+            <Menu size={34} strokeWidth={2.2} />
+          )}
         </button>
       </div>
 
-              <MobileNav
-          key={menuOpen ? "open" : "closed"}
-          isOpen={menuOpen}
-          onClose={closeMenu}
-          phoneNumber={PHONE_NUMBER}
-        />
+      {/* ===== MOBILE NAVIGATION ===== */}
+
+      <MobileNav
+        key={menuOpen ? "open" : "closed"}
+        isOpen={menuOpen}
+        onClose={closeMenu}
+        phoneNumber={PHONE_NUMBER}
+      />
     </header>
   );
 }

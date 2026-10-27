@@ -1,5 +1,8 @@
+
+import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import heroImage from "../../../assets/h1.jpg";
+
 import "./Hero.css";
 
 export default function Hero() {
@@ -20,9 +23,14 @@ export default function Hero() {
     >
       <div className="container home-hero__container">
         <div className="home-hero__content">
+
+          {/* ===== EYEBROW ===== */}
+
           <span className="eyebrow home-hero__eyebrow">
             Vancouver's #1
           </span>
+
+          {/* ===== HERO HEADING ===== */}
 
           <h1 className="heading-hero home-hero__title">
             Pristine Commercial & Residential Hood
@@ -32,28 +40,44 @@ export default function Hero() {
             </span>
           </h1>
 
+          {/* ===== DESCRIPTION ===== */}
+
           <p className="home-hero__description">
             Proudly serving Greater Vancouver & surrounding
             areas with professional kitchen hood and exhaust
             cleaning services.
           </p>
 
+          {/* ===== CTA BUTTONS ===== */}
+
           <div className="home-hero__actions">
-            <a
-              href="#contact"
+
+            {/* COMMERCIAL */}
+
+            <Link
+              to="/commercial/hood-cleaning"
               className="btn btn--primary home-hero__button"
             >
               Commercial
-              <ArrowRight size={21} strokeWidth={2.4} />
-            </a>
+              <ArrowRight
+                size={21}
+                strokeWidth={2.4}
+              />
+            </Link>
 
-            <a
-              href="#contact"
+            {/* RESIDENTIAL */}
+
+            <Link
+              to="/residential/hood-cleaning"
               className="btn btn--outline home-hero__button"
             >
               Residential
-              <ArrowRight size={21} strokeWidth={2.4} />
-            </a>
+              <ArrowRight
+                size={21}
+                strokeWidth={2.4}
+              />
+            </Link>
+
           </div>
         </div>
       </div>

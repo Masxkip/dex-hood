@@ -1,0 +1,526 @@
+
+/* =========================================
+   HOME SERVICES - SECTION BASE
+========================================= */
+
+.home-services {
+  width: 100%;
+  background-color: var(--color-white);
+}
+
+/* Residential background */
+
+.home-services--residential {
+  background-color: var(--color-background);
+}
+
+/* =========================================
+   SECTION HEADER
+========================================= */
+
+.home-services__header {
+  max-width: 1080px;
+  margin-bottom: clamp(32px, 4vw, 52px);
+}
+
+/* EYEBROW */
+
+.home-services__eyebrow {
+  color: var(--color-primary);
+  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+  font-weight: var(--font-weight-heading, 500);
+  letter-spacing: 0.15em;
+}
+
+/* MAIN HEADING */
+
+.home-services__title {
+  margin: 14px 0 20px;
+
+  font-family: var(--font-family);
+  font-size: var(--font-h2);
+  font-weight: var(--font-weight-heading, 500);
+  line-height: 1.16;
+  letter-spacing: -0.045em;
+
+  color: var(--color-text);
+}
+
+/* INTRO PARAGRAPH */
+
+.home-services__description {
+  max-width: 1000px;
+  margin: 0;
+
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  font-weight: var(--font-weight-body, 500);
+  line-height: 1.65;
+
+  color: var(--color-text-muted);
+}
+
+/* =========================================
+   SERVICES GRID - DESKTOP
+========================================= */
+
+.home-services__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+
+/* =========================================
+   SERVICE CARD
+========================================= */
+
+.home-service-card {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  height: 100%;
+
+  background: var(--color-white);
+
+  border: 1px solid #dfe7e9;
+  border-radius: var(--radius-md);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* ENTIRE CARD IS CLICKABLE */
+
+.home-service-card__link {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  height: 100%;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================
+   SERVICE IMAGE
+========================================= */
+
+.home-service-card__media {
+  position: relative;
+
+  width: 100%;
+  height: clamp(195px, 17vw, 240px);
+
+  overflow: hidden;
+  background-color: var(--color-primary);
+
+  isolation: isolate;
+}
+
+.home-service-card__image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.45s ease;
+}
+
+/* DARK IMAGE OVERLAY */
+
+.home-service-card__media::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.02) 0%,
+    rgba(0, 0, 0, 0.16) 35%,
+    rgba(0, 0, 0, 0.78) 100%
+  );
+
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* SERVICE TITLE OVER IMAGE */
+
+.home-service-card__title {
+  position: absolute;
+  z-index: 2;
+
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+
+  margin: 0;
+
+  color: var(--color-white);
+
+  font-family: var(--font-family);
+  font-size: clamp(1.125rem, 1.45vw, 1.45rem);
+  font-weight: var(--font-weight-heading, 500);
+
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================================
+   SERVICE CARD CONTENT
+========================================= */
+
+.home-service-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  flex: 1;
+
+  padding: clamp(20px, 2vw, 28px);
+}
+
+/* SUBTITLE */
+
+.home-service-card__subtitle {
+  margin: 0 0 14px;
+
+  font-family: var(--font-family);
+  font-size: clamp(1rem, 1.1vw, 1.125rem);
+  font-weight: var(--font-weight-heading, 500);
+
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+/* DESCRIPTION */
+
+.home-service-card__description {
+  margin: 0;
+
+  font-size: clamp(0.95rem, 1vw, 1.05rem);
+  font-weight: var(--font-weight-body, 500);
+
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+
+/* =========================================
+   LEARN MORE LINK
+========================================= */
+
+.home-service-card__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: auto;
+  padding-top: 26px;
+
+  color: var(--color-primary);
+
+  font-size: 16px;
+  font-weight: var(--font-weight-button, 500);
+
+  line-height: 1.4;
+
+  transition: color 0.25s ease;
+}
+
+.home-service-card__more svg {
+  flex-shrink: 0;
+
+  transition: transform 0.3s ease;
+}
+
+/* =========================================
+   CARD HOVER
+========================================= */
+
+@media (hover: hover) {
+  .home-service-card:hover {
+    transform: translateY(-5px);
+
+    border-color: var(--color-accent-light);
+
+    box-shadow:
+      0 12px 35px rgba(16, 37, 39, 0.09);
+  }
+
+  .home-service-card:hover
+  .home-service-card__image {
+    transform: scale(1.05);
+  }
+
+  .home-service-card:hover
+  .home-service-card__more svg {
+    transform: translateX(5px);
+  }
+}
+
+/* KEYBOARD ACCESSIBILITY */
+
+.home-service-card:focus-within {
+  border-color: var(--color-accent);
+}
+
+.home-service-card__link:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: -3px;
+  border-radius: var(--radius-md);
+}
+
+/* =========================================
+   SMALL DESKTOP & TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+  .home-services__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  .home-service-card__media {
+    height: 240px;
+  }
+
+  .home-service-card__title {
+    font-size: clamp(1.2rem, 2.1vw, 1.5rem);
+  }
+}
+
+/* =========================================
+   MOBILE - SINGLE COLUMN
+========================================= */
+
+@media (max-width: 640px) {
+  .home-services__header {
+    margin-bottom: 30px;
+  }
+
+  .home-services__title {
+    margin: 12px 0 16px;
+    line-height: 1.18;
+  }
+
+  .home-services__description {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .home-services__grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .home-service-card__media {
+    height: 230px;
+  }
+
+  .home-service-card__title {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+
+    font-size: 22px;
+    line-height: 1.25;
+  }
+
+  .home-service-card__body {
+    padding: 22px;
+  }
+
+  .home-service-card__subtitle {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .home-service-card__description {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .home-service-card__more {
+    padding-top: 22px;
+    font-size: 16px;
+  }
+}
+
+/* =========================================
+   SMALL IPHONE SCREENS
+========================================= */
+
+@media (max-width: 380px) {
+  .home-service-card__media {
+    height: 205px;
+  }
+
+  .home-service-card__title {
+    font-size: 20px;
+  }
+
+  .home-service-card__body {
+    padding: 20px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .home-service-card,
+  .home-service-card__image,
+  .home-service-card__more,
+  .home-service-card__more svg {
+    transition: none;
+  }
+}
+
+
+
+/* =========================================
+   COMPACT SERVICE CARDS - DESKTOP
+========================================= */
+
+@media (min-width: 1101px) {
+
+  /* Reduce image height */
+
+  .home-service-card__media {
+    height: 165px;
+  }
+
+  /* Reduce service title size */
+
+  .home-service-card__title {
+    font-size: 18px;
+    line-height: 1.3;
+    left: 18px;
+    right: 18px;
+    bottom: 16px;
+  }
+
+  /* Reduce card internal spacing */
+
+  .home-service-card__body {
+    padding: 20px;
+  }
+
+  /* Compact subtitle */
+
+  .home-service-card__subtitle {
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+
+  /* Limit descriptions to four lines */
+
+  .home-service-card__description {
+    font-size: 15px;
+    line-height: 1.5;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+
+    overflow: hidden;
+  }
+
+  /* Bring Learn More closer */
+
+  .home-service-card__more {
+    padding-top: 18px;
+    font-size: 15px;
+  }
+}
+
+/* =========================================
+   TABLET - COMPACT CARDS
+========================================= */
+
+@media (min-width: 641px) and (max-width: 1100px) {
+
+  .home-service-card__media {
+    height: 190px;
+  }
+
+  .home-service-card__body {
+    padding: 20px;
+  }
+
+  .home-service-card__description {
+    font-size: 15px;
+    line-height: 1.55;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+
+    overflow: hidden;
+  }
+
+  .home-service-card__more {
+    padding-top: 18px;
+  }
+}
+
+/* =========================================
+   MOBILE - SLIGHTLY SHORTER CARDS
+========================================= */
+
+@media (max-width: 640px) {
+
+  .home-service-card__media {
+    height: 190px;
+  }
+
+  .home-service-card__title {
+    font-size: 20px;
+    left: 18px;
+    right: 18px;
+    bottom: 16px;
+  }
+
+  .home-service-card__body {
+    padding: 19px;
+  }
+
+  .home-service-card__subtitle {
+    font-size: 17px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+
+  .home-service-card__description {
+    font-size: 15px;
+    line-height: 1.55;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+
+    overflow: hidden;
+  }
+
+  .home-service-card__more {
+    font-size: 15px;
+    padding-top: 16px;
+  }
+}

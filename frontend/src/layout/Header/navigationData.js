@@ -1,3 +1,4 @@
+
 export const navigationLinks = [
   {
     label: "Home",
@@ -8,6 +9,10 @@ export const navigationLinks = [
     href: "/about",
   },
   {
+    label: "Services",
+    href: "/services",
+  },
+  {
     label: "Commercial",
     children: [
       {
@@ -15,15 +20,15 @@ export const navigationLinks = [
         href: "/commercial/hood-cleaning",
       },
       {
-        label: "Exhaust Duct Cleaning",
+        label: "Kitchen Exhaust Duct Cleaning",
         href: "/commercial/duct-cleaning",
       },
       {
-        label: "Grease Filter Cleaning",
+        label: "Grease Filter Cleaning & Exchange",
         href: "/commercial/filter-cleaning",
       },
       {
-        label: "Kitchen Exhaust Maintenance",
+        label: "Kitchen Exhaust Maintenance & Repairs",
         href: "/commercial/maintenance",
       },
     ],
@@ -32,19 +37,19 @@ export const navigationLinks = [
     label: "Residential",
     children: [
       {
-        label: "Residential Hood Cleaning",
+        label: "Residential Range Hood Cleaning",
         href: "/residential/hood-cleaning",
       },
       {
-        label: "Range Hood Degreasing",
-        href: "/residential/degreasing",
-      },
-      {
-        label: "Kitchen Vent Cleaning",
+        label: "Kitchen Exhaust Duct Cleaning",
         href: "/residential/vent-cleaning",
       },
       {
-        label: "Routine Hood Maintenance",
+        label: "Range Hood Filter Cleaning & Replacement",
+        href: "/residential/degreasing",
+      },
+      {
+        label: "Range Hood Maintenance & Repairs",
         href: "/residential/maintenance",
       },
     ],

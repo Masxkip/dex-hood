@@ -1,0 +1,564 @@
+
+/* =========================================
+   SERVICE DETAIL PAGE
+========================================= */
+
+.service-detail-page {
+  width: 100%;
+  background-color: var(--color-white);
+  color: var(--color-text);
+}
+
+/* =========================================
+   SERVICE INTRODUCTION
+========================================= */
+
+.service-detail__intro {
+  width: 100%;
+
+  padding-top: clamp(30px, 3.5vw, 55px);
+  padding-bottom: clamp(26px, 3vw, 44px);
+
+  background-color: var(--color-white);
+}
+
+/* =========================================
+   BREADCRUMB NAVIGATION
+========================================= */
+
+.service-detail__intro .breadcrumbs {
+  margin-bottom: 32px;
+}
+
+.service-detail__intro .breadcrumbs__link {
+  color: var(--color-text);
+}
+
+.service-detail__intro .breadcrumbs__link:hover {
+  color: var(--color-primary);
+}
+
+.service-detail__intro .breadcrumbs__current {
+  color: var(--color-text);
+}
+
+.service-detail__intro .breadcrumbs__separator {
+  color: var(--color-text-muted);
+}
+
+/* =========================================
+   INTRODUCTION TWO COLUMN LAYOUT
+========================================= */
+
+.service-detail__intro-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.45fr)
+    minmax(0, 0.75fr);
+
+  gap: clamp(30px, 4vw, 65px);
+
+  align-items: center;
+}
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.service-detail__intro-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+  min-width: 0;
+}
+
+/* SERVICE TITLE */
+
+.service-detail__title {
+  margin: 0;
+
+  font-family: var(--font-family);
+  font-size: var(--font-h2);
+  font-weight: var(--font-weight-heading, 500);
+
+  line-height: 1.18;
+  letter-spacing: -0.045em;
+
+  color: var(--color-text);
+}
+
+/* SERVICE SUBTITLE */
+
+.service-detail__subtitle {
+  margin: 0;
+
+  font-size: clamp(1.125rem, 1.5vw, 1.375rem);
+  font-weight: var(--font-weight-heading, 500);
+
+  line-height: 1.4;
+
+  color: var(--color-primary);
+}
+
+/* SERVICE DESCRIPTION */
+
+.service-detail__description {
+  margin: 0;
+
+  font-size: clamp(1rem, 1.15vw, 1.18rem);
+  font-weight: var(--font-weight-body, 500);
+
+  line-height: 1.6;
+
+  color: #111111;
+}
+
+/* =========================================
+   RIGHT IMAGE
+========================================= */
+
+.service-detail__image-wrapper {
+  width: 100%;
+  max-width: 480px;
+
+  justify-self: end;
+
+  overflow: hidden;
+
+  border-radius: var(--radius-md);
+}
+
+.service-detail__image {
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 1.4 / 1;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+/* =========================================
+   WHAT'S INCLUDED SECTION
+========================================= */
+
+.service-detail__scope {
+  width: 100%;
+
+  padding-top: clamp(26px, 3vw, 45px);
+  padding-bottom: clamp(60px, 7vw, 100px);
+
+  background-color: var(--color-white);
+}
+
+/* =========================================
+   SCOPE TWO COLUMN GRID
+========================================= */
+
+.service-detail__scope-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.9fr)
+    minmax(0, 1.5fr);
+
+  gap: clamp(30px, 4vw, 65px);
+
+  align-items: start;
+}
+
+/* =========================================
+   LEFT SCOPE INTRODUCTION
+========================================= */
+
+.service-detail__scope-intro {
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+  min-width: 0;
+}
+
+/* SCOPE HEADING */
+
+.service-detail__scope-title {
+  margin: 0;
+
+  font-family: var(--font-family);
+  font-size: var(--font-h2);
+  font-weight: var(--font-weight-heading, 500);
+
+  line-height: 1.2;
+  letter-spacing: -0.045em;
+
+  color: var(--color-text);
+}
+
+/* SCOPE DESCRIPTION */
+
+.service-detail__scope-intro p {
+  margin: 0;
+
+  font-size: clamp(1rem, 1.15vw, 1.18rem);
+  font-weight: var(--font-weight-body, 500);
+
+  line-height: 1.6;
+
+  color: #111111;
+}
+
+/* =========================================
+   RIGHT SCOPE CONTENT
+========================================= */
+
+.service-detail__scope-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 22px;
+  min-width: 0;
+}
+
+/* GROUP TITLE */
+
+.service-detail__group-title {
+  margin: 0;
+
+  font-family: var(--font-family);
+  font-size: clamp(1.125rem, 1.3vw, 1.25rem);
+  font-weight: var(--font-weight-heading, 500);
+
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+
+  color: var(--color-text);
+}
+
+/* =========================================
+   CHECKLIST
+========================================= */
+
+.service-detail__checklist {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px 28px;
+
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+}
+
+/* CHECKLIST ITEM */
+
+.service-detail__check-item {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 14px;
+  min-width: 0;
+
+  font-family: var(--font-family);
+  font-size: clamp(1rem, 1.1vw, 1.1rem);
+  font-weight: var(--font-weight-body, 500);
+
+  line-height: 1.55;
+
+  color: #111111;
+}
+
+
+/* =========================================
+   SERVICE CHECKMARK - ORANGE THEME
+========================================= */
+
+.service-detail__check-icon {
+  width: 36px;
+  height: 36px;
+
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent);
+
+  border-radius: 50%;
+}
+
+
+/* =========================================
+   DETAILED DESCRIPTION
+========================================= */
+
+.service-detail__closing {
+  width: 100%;
+
+  margin-top: 36px;
+
+  /* No dividing line */
+  border: none;
+  padding: 0;
+}
+
+.service-detail__closing p {
+  margin: 0;
+
+  font-family: var(--font-family);
+  font-size: clamp(1rem, 1.15vw, 1.18rem);
+  font-weight: var(--font-weight-body, 500);
+
+  line-height: 1.65;
+
+  color: #111111;
+}
+
+/* =========================================
+   SERVICE NOT FOUND
+========================================= */
+
+.service-detail__not-found {
+  min-height: 65vh;
+
+  padding-top: calc(var(--header-height) + 80px);
+  padding-bottom: 80px;
+
+  background: var(--color-white);
+}
+
+.service-detail__not-found p {
+  margin-bottom: 26px;
+  color: #111111;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 980px) {
+  .service-detail__intro-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .service-detail__image-wrapper {
+    justify-self: start;
+    max-width: 550px;
+  }
+
+  .service-detail__scope-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .service-detail__closing {
+    margin-top: 32px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 640px) {
+  .service-detail__intro {
+    padding-top: 24px;
+    padding-bottom: 26px;
+  }
+
+  .service-detail__intro .breadcrumbs {
+    margin-bottom: 26px;
+  }
+
+  .service-detail__intro-grid {
+    gap: 26px;
+  }
+
+  .service-detail__intro-content {
+    gap: 12px;
+  }
+
+  .service-detail__title {
+    line-height: 1.2;
+  }
+
+  .service-detail__subtitle {
+    font-size: 18px;
+  }
+
+  .service-detail__description {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* IMAGE */
+
+  .service-detail__image-wrapper {
+    max-width: 100%;
+  }
+
+  .service-detail__image {
+    aspect-ratio: 1.45 / 1;
+  }
+
+  /* SCOPE */
+
+  .service-detail__scope {
+    padding-top: 22px;
+    padding-bottom: 55px;
+  }
+
+  .service-detail__scope-grid {
+    gap: 28px;
+  }
+
+  .service-detail__scope-intro {
+    gap: 12px;
+  }
+
+  .service-detail__scope-title {
+    line-height: 1.2;
+  }
+
+  .service-detail__scope-intro p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .service-detail__scope-content {
+    gap: 18px;
+  }
+
+  .service-detail__group-title {
+    font-size: 18px;
+  }
+
+  /* CHECKLIST - ONE COLUMN */
+
+  .service-detail__checklist {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .service-detail__check-item {
+    font-size: 16px;
+    line-height: 1.55;
+    gap: 12px;
+  }
+
+  .service-detail__check-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* CLOSING DESCRIPTION */
+
+  .service-detail__closing {
+    margin-top: 28px;
+  }
+
+  .service-detail__closing p {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .service-detail__intro-content {
+    gap: 10px;
+  }
+
+  .service-detail__image {
+    aspect-ratio: 1.3 / 1;
+  }
+
+  .service-detail__checklist {
+    gap: 16px;
+  }
+}
+
+
+
+/* =========================================
+   SERVICE DETAIL - QUOTE BUTTON
+========================================= */
+
+.service-detail__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 16px;
+  margin-top: 14px;
+}
+
+/* USE EXISTING GLOBAL BUTTON DESIGN */
+
+.service-detail__quote-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 14px;
+  min-width: 210px;
+  width: fit-content;
+}
+
+/* ARROW ANIMATION */
+
+.service-detail__quote-button svg {
+  flex-shrink: 0;
+  transition: transform var(--transition);
+}
+
+.service-detail__quote-button:hover svg,
+.service-detail__quote-button:focus-visible svg {
+  transform: translateX(4px);
+}
+
+/* KEEP HOVER VISIBLE ON WHITE BACKGROUND */
+
+.service-detail__quote-button:hover {
+  border-color: var(--color-accent);
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 640px) {
+  .service-detail__actions {
+    margin-top: 12px;
+  }
+
+  .service-detail__quote-button {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .service-detail__quote-button svg {
+    transition: none;
+  }
+
+  .service-detail__quote-button:hover svg,
+  .service-detail__quote-button:focus-visible svg {
+    transform: none;
+  }
+}

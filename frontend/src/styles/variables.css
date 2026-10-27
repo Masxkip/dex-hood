@@ -36,6 +36,17 @@
   --radius-sm: 6px;
   --radius-md: 14px;
   --transition: 0.25s ease;
+
+  /* ===== GLOBAL FONT WEIGHTS ===== */
+
+    --font-weight-base: 300;
+    --font-weight-heading: 300;
+    --font-weight-body: 300;
+    --font-weight-button: 300;
+    --font-weight-navigation: 300;
+
 }
+
+
 
 

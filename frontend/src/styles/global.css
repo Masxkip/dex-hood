@@ -124,11 +124,71 @@ img {
   color: var(--color-accent);
 }
 
+/* ===== GLOBAL BUTTONS ===== */
+
+.btn {
+  font-weight: var(--font-weight-button);
+}
+
 /* MOBILE */
 
 @media (max-width: 480px) {
   .btn {
     font-size: 17px;
     border-radius: 8px;
+  }
+}
+
+
+/* =========================================
+   HIDE SCROLLBAR - KEEP SCROLLING ENABLED
+========================================= */
+
+html {
+  scrollbar-width: none; /* Firefox */
+}
+
+body {
+  -ms-overflow-style: none; /* Legacy Edge / IE */
+   font-weight: var(--font-weight-base);
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+
+
+
+/* =========================================
+   SMOOTH PAGE TRANSITIONS
+========================================= */
+
+:root {
+  --page-transition-duration: 350ms;
+}
+
+.page-transition {
+  animation: pageFadeIn
+    var(--page-transition-duration)
+    ease-out both;
+}
+
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    animation: none;
   }
 }

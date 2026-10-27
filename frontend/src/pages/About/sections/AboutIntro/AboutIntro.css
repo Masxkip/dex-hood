@@ -163,3 +163,13 @@
     line-height: 1.55;
   }
 }
+
+/* ===== ABOUT INTRO ===== */
+
+.about-intro__heading {
+  font-weight: var(--font-weight-heading);
+}
+
+.about-intro__highlight p {
+  font-weight: var(--font-weight-body);
+}
