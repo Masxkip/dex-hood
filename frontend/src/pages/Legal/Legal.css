@@ -1,0 +1,416 @@
+
+/* =========================================
+   01. LEGAL PAGE BASE
+========================================= */
+
+.legal-page {
+  --legal-header-offset: var(--header-height);
+
+  width: 100%;
+  min-height: 60vh;
+
+  background-color: var(--color-white);
+  color: var(--color-text);
+
+  font-family: var(--font-family);
+
+  padding-top: calc(
+    var(--legal-header-offset) + clamp(40px, 5vw, 72px)
+  );
+
+  padding-bottom: clamp(70px, 8vw, 120px);
+}
+
+/* =========================================
+   02. MAIN CONTAINER
+========================================= */
+
+.legal-page__container {
+  width: min(
+    calc(100% - var(--page-gutter) * 2),
+    1200px
+  );
+
+  margin-inline: auto;
+}
+
+/* =========================================
+   03. PAGE HEADER
+========================================= */
+
+.legal-page__header {
+  margin-bottom: clamp(48px, 5vw, 76px);
+}
+
+/* EYEBROW */
+
+.legal-page__eyebrow {
+  display: block;
+
+  margin-bottom: 18px;
+
+  color: var(--color-primary);
+
+  font-family: var(--font-family);
+  font-size: var(--font-h4);
+  font-weight: var(--font-weight-heading);
+
+  letter-spacing: 0.075em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+/* MAIN TITLE */
+
+.legal-page__title {
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-family: var(--font-family);
+  font-size: var(--font-h2);
+  font-weight: var(--font-weight-heading);
+
+  letter-spacing: -0.045em;
+  line-height: 1.18;
+}
+
+/* LAST UPDATED */
+
+.legal-page__updated {
+  margin: 20px 0 0;
+
+  color: var(--color-text-muted);
+
+  font-family: var(--font-family);
+  font-size: 15px;
+  font-weight: var(--font-weight-body);
+
+  line-height: 1.6;
+}
+
+/* =========================================
+   04. MAIN CONTENT
+========================================= */
+
+.legal-page__content {
+  width: 100%;
+  max-width: 1200px;
+
+  color: var(--color-text);
+  overflow-wrap: break-word;
+}
+
+/* =========================================
+   05. INTRODUCTION
+========================================= */
+
+.legal-page__intro {
+  margin-bottom: clamp(55px, 6vw, 85px);
+}
+
+.legal-page__content p {
+  margin: 0 0 24px;
+
+  color: var(--color-text-muted);
+
+  font-family: var(--font-family);
+  font-size: var(--font-body);
+  font-weight: var(--font-weight-body);
+
+  line-height: 1.8;
+}
+
+.legal-page__content p:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================
+   06. SECTION SPACING
+========================================= */
+
+.legal-page__section {
+  margin-bottom: clamp(55px, 6vw, 85px);
+}
+
+.legal-page__section:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================
+   07. NUMBERED SECTION HEADINGS
+========================================= */
+
+.legal-page__section h2 {
+  margin: 0 0 28px;
+
+  color: var(--color-text);
+
+  font-family: var(--font-family);
+  font-size: clamp(1.45rem, 2.1vw, 2rem);
+  font-weight: 600;
+
+  line-height: 1.35;
+  letter-spacing: -0.035em;
+}
+
+/* =========================================
+   08. BULLET LISTS
+========================================= */
+
+.legal-page__content ul {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  margin: 28px 0 30px;
+  padding-left: 30px;
+
+  list-style-type: disc;
+}
+
+.legal-page__content li {
+  padding-left: 10px;
+
+  color: var(--color-text-muted);
+
+  font-family: var(--font-family);
+  font-size: var(--font-body);
+  font-weight: var(--font-weight-body);
+
+  line-height: 1.75;
+}
+
+.legal-page__content li::marker {
+  color: var(--color-accent-light);
+  font-size: 0.85em;
+}
+
+/* =========================================
+   09. LINKS
+========================================= */
+
+.legal-page__content a {
+  color: var(--color-primary);
+
+  text-decoration: none;
+  text-underline-offset: 4px;
+
+  transition: color var(--transition);
+}
+
+.legal-page__content a:hover,
+.legal-page__content a:focus-visible {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+/* =========================================
+   10. CONTACT INFORMATION
+========================================= */
+
+.legal-page__contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 8px;
+
+  margin-top: 28px;
+
+  color: var(--color-text-muted);
+
+  font-family: var(--font-family);
+  font-size: var(--font-body);
+  font-weight: var(--font-weight-body);
+
+  font-style: normal;
+  line-height: 1.7;
+}
+
+.legal-page__contact strong {
+  margin-bottom: 8px;
+
+  color: var(--color-text);
+
+  font-weight: 600;
+}
+
+.legal-page__contact span {
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   11. TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .legal-page {
+    --legal-header-offset: 76px;
+
+    padding-top: calc(
+      var(--legal-header-offset) + 60px
+    );
+
+    padding-bottom: 80px;
+  }
+
+  .legal-page__header {
+    margin-bottom: 55px;
+  }
+
+  .legal-page__intro {
+    margin-bottom: 65px;
+  }
+
+  .legal-page__section {
+    margin-bottom: 65px;
+  }
+
+  .legal-page__section h2 {
+    margin-bottom: 24px;
+  }
+}
+
+/* =========================================
+   12. MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .legal-page {
+    padding-top: calc(
+      var(--legal-header-offset) + 42px
+    );
+
+    padding-bottom: 65px;
+  }
+
+  .legal-page__header {
+    margin-bottom: 42px;
+  }
+
+  /* PAGE TITLE */
+
+  .legal-page__title {
+    font-size: clamp(2rem, 6.5vw, 3rem);
+    line-height: 1.2;
+  }
+
+  .legal-page__eyebrow {
+    margin-bottom: 14px;
+    font-size: 14px;
+  }
+
+  .legal-page__updated {
+    margin-top: 16px;
+    font-size: 14px;
+  }
+
+  /* MAIN CONTENT */
+
+  .legal-page__content p {
+    margin-bottom: 20px;
+
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  /* SECTIONS */
+
+  .legal-page__intro,
+  .legal-page__section {
+    margin-bottom: 48px;
+  }
+
+  .legal-page__section h2 {
+    margin-bottom: 22px;
+
+    font-size: clamp(1.35rem, 4.8vw, 1.7rem);
+    line-height: 1.35;
+  }
+
+  /* LISTS */
+
+  .legal-page__content ul {
+    gap: 16px;
+
+    margin: 22px 0 25px;
+    padding-left: 23px;
+  }
+
+  .legal-page__content li {
+    padding-left: 7px;
+
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* CONTACT */
+
+  .legal-page__contact {
+    gap: 8px;
+    margin-top: 22px;
+    font-size: 16px;
+  }
+}
+
+/* =========================================
+   13. SMALL MOBILE / IPHONE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .legal-page {
+    --legal-header-offset: 70px;
+
+    padding-top: calc(
+      var(--legal-header-offset) + 35px
+    );
+
+    padding-bottom: 55px;
+  }
+
+  .legal-page__header {
+    margin-bottom: 38px;
+  }
+
+  .legal-page__title {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+
+  .legal-page__intro,
+  .legal-page__section {
+    margin-bottom: 42px;
+  }
+
+  .legal-page__section h2 {
+    font-size: clamp(1.3rem, 5.2vw, 1.55rem);
+  }
+
+  .legal-page__content p,
+  .legal-page__content li {
+    font-size: 16px;
+  }
+
+  .legal-page__content ul {
+    padding-left: 21px;
+  }
+
+  .legal-page__contact {
+    font-size: 16px;
+  }
+}
+
+/* =========================================
+   14. ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .legal-page__content a {
+    transition: none;
+  }
+}

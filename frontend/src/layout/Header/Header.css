@@ -56,7 +56,6 @@
   margin: 0;
   padding: 0;
 
-  /* Move only the logo, not the nav or buttons */
   transform: translateX(-30px);
 }
 
@@ -99,14 +98,14 @@
 
   font-family: var(--font-family);
   font-size: clamp(15px, 1.05vw, 18px);
-  font-weight: 600;
+  font-weight: var(--font-weight-navigation);
   line-height: 1.4;
   white-space: nowrap;
 
   color: var(--color-white);
   cursor: pointer;
 
-  transition: color 0.25s ease;
+  transition: color var(--transition);
 }
 
 .desktop-nav__link:hover,
@@ -120,7 +119,9 @@
 }
 
 .site-header--scrolled .desktop-nav__link:hover,
-.site-header--menu-open .desktop-nav__link:hover {
+.site-header--scrolled .desktop-nav__link:focus-visible,
+.site-header--menu-open .desktop-nav__link:hover,
+.site-header--menu-open .desktop-nav__link:focus-visible {
   color: var(--color-primary);
 }
 
@@ -150,9 +151,9 @@
   pointer-events: none;
 
   transition:
-    opacity 0.25s ease,
-    transform 0.25s ease,
-    visibility 0.25s ease;
+    opacity var(--transition),
+    transform var(--transition),
+    visibility var(--transition);
 }
 
 .desktop-nav__item:hover .desktop-nav__dropdown,
@@ -169,15 +170,15 @@
 
   color: var(--color-text);
   font-size: 15px;
-  font-weight: 500;
+  font-weight: var(--font-weight-navigation);
   line-height: 1.5;
 
   border-bottom: 1px solid #eeeeee;
 
   transition:
-    background-color 0.25s ease,
-    color 0.25s ease,
-    padding-left 0.25s ease;
+    background-color var(--transition),
+    color var(--transition),
+    padding-left var(--transition);
 }
 
 .desktop-nav__dropdown a:last-child {
@@ -192,7 +193,8 @@
 }
 
 /* =========================================
-   06. HEADER ACTION BUTTONS
+   06. HEADER CTA BUTTONS
+   SHARED HERO BUTTON DESIGN
 ========================================= */
 
 .header-actions {
@@ -202,85 +204,128 @@
   flex-shrink: 0;
 }
 
-.header-button {
+.site-header .header-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
 
   min-height: 52px;
-  padding: 14px 18px;
+  padding: 13px clamp(14px, 1.3vw, 24px);
 
-  border: 2px solid transparent;
-  border-radius: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 8px;
 
   font-family: var(--font-family);
-  font-size: 14px;
-  font-weight: 700;
+  font-size: clamp(13px, 0.95vw, 16px);
+  font-weight: var(--font-weight-button);
   line-height: 1.3;
+
   text-align: center;
   white-space: nowrap;
   text-decoration: none;
 
   cursor: pointer;
 
-  /* No bounce or movement */
-  transform: none;
-
   transition:
-    background-color 0.25s ease,
-    color 0.25s ease,
-    border-color 0.25s ease;
+    background-color var(--transition),
+    color var(--transition),
+    border-color var(--transition);
 }
 
-/* PRIMARY BUTTON */
+/* =========================================
+   07. PRIMARY BUTTON
+   MATCHES HERO PRIMARY
+========================================= */
 
-.header-button--primary {
+.site-header .header-button--primary {
   background-color: var(--color-accent);
   border-color: var(--color-accent);
   color: var(--color-white);
 }
 
-.header-button--primary:hover {
-  background-color: var(--color-accent-hover);
-  border-color: var(--color-accent-hover);
-  color: var(--color-white);
-}
+/* HERO-STYLE COLOR INVERSION */
 
-/* SECONDARY PHONE BUTTON */
-
-.header-button--phone {
+.site-header .header-button--primary:hover,
+.site-header .header-button--primary:focus-visible {
   background-color: var(--color-white);
   border-color: var(--color-accent);
-  color: var(--color-primary);
-}
-
-.header-button--phone:hover {
-  background-color: var(--color-accent-soft);
-  color: var(--color-primary);
-}
-
-/* OUTLINE BUTTON */
-
-.header-button--outline {
-  background-color: var(--color-white);
-  border-color: var(--color-accent);
-  color: var(--color-primary);
-}
-
-.header-button--outline:hover {
-  background-color: var(--color-accent-soft);
-}
-
-/* DISABLED BUTTON */
-
-.header-button--disabled {
-  opacity: 1;
-  cursor: default;
+  color: var(--color-accent);
 }
 
 /* =========================================
-   07. HAMBURGER TOGGLE
+   08. PHONE OUTLINE BUTTON
+   MATCHES HERO OUTLINE
+========================================= */
+
+.site-header .header-button--phone {
+  background-color: transparent;
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+/* HOVER OVER DARK HERO */
+
+.site-header .header-button--phone:hover,
+.site-header .header-button--phone:focus-visible {
+  background-color: var(--color-white);
+  border-color: var(--color-white);
+  color: var(--color-accent);
+}
+
+/* =========================================
+   09. SCROLLED HEADER BUTTON COLORS
+========================================= */
+
+/* OUTLINE ON WHITE HEADER */
+
+.site-header--scrolled .header-button--phone,
+.site-header--menu-open .header-button--phone {
+  background-color: transparent;
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* OUTLINE HOVER ON WHITE HEADER */
+
+.site-header--scrolled .header-button--phone:hover,
+.site-header--scrolled .header-button--phone:focus-visible,
+.site-header--menu-open .header-button--phone:hover,
+.site-header--menu-open .header-button--phone:focus-visible {
+  background-color: var(--color-accent-soft);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* =========================================
+   10. BUTTON ICON ANIMATIONS
+   SAME AS HERO.JSX
+========================================= */
+
+.header-button svg {
+  flex-shrink: 0;
+
+  transition:
+    transform var(--transition);
+}
+
+/* ARROW MOVES RIGHT */
+
+.header-button:hover .header-button__arrow,
+.header-button:focus-visible .header-button__arrow {
+  transform: translateX(4px);
+}
+
+/* PHONE ICON SUBTLE MOVEMENT */
+
+.header-button:hover .header-button__icon,
+.header-button:focus-visible .header-button__icon {
+  transform: translateX(3px);
+}
+
+/* =========================================
+   11. HAMBURGER TOGGLE
 ========================================= */
 
 .menu-toggle {
@@ -317,7 +362,7 @@
 }
 
 /* =========================================
-   08. MOBILE NAV - DESKTOP HIDDEN
+   12. MOBILE NAV - DESKTOP HIDDEN
 ========================================= */
 
 .mobile-nav {
@@ -325,7 +370,7 @@
 }
 
 /* =========================================
-   09. TABLET AND MOBILE
+   13. TABLET AND MOBILE
 ========================================= */
 
 @media (max-width: 1100px) {
@@ -345,7 +390,7 @@
     min-height: 76px;
   }
 
-  /* LOGO POSITION */
+  /* LOGO */
 
   .header-logo {
     transform: translateX(-15px);
@@ -397,7 +442,7 @@
     pointer-events: auto;
   }
 
-  /* REMOVE PROGRAMMATIC FOCUS OUTLINE */
+  /* PROGRAMMATIC FOCUS */
 
   .mobile-nav:focus,
   .mobile-nav:focus-visible {
@@ -450,12 +495,12 @@
 
     font-family: var(--font-family);
     font-size: clamp(19px, 2.5vw, 23px);
-    font-weight: 600;
+    font-weight: var(--font-weight-navigation);
     text-align: left;
 
     cursor: pointer;
 
-    transition: color 0.25s ease;
+    transition: color var(--transition);
   }
 
   .mobile-nav__link:hover,
@@ -516,8 +561,8 @@
     border-left: 2px solid var(--color-accent);
 
     transition:
-      color 0.25s ease,
-      background-color 0.25s ease;
+      color var(--transition),
+      background-color var(--transition);
   }
 
   .mobile-nav__submenu a:hover,
@@ -527,7 +572,7 @@
   }
 
   /* =====================================
-     MOBILE ACTION BUTTONS
+     MOBILE CTA BUTTONS
   ===================================== */
 
   .mobile-nav__actions {
@@ -538,7 +583,7 @@
     margin-top: 32px;
   }
 
-  .mobile-nav__actions .header-button {
+  .site-header .mobile-nav__actions .header-button {
     width: 100%;
     min-height: 58px;
 
@@ -546,13 +591,42 @@
 
     font-size: 17px;
     white-space: normal;
+    border-radius: 8px;
+  }
 
-    border-radius: 12px;
+  /* PRIMARY USES THE SAME HERO COLORS */
+
+  .site-header .mobile-nav__actions .header-button--primary {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-white);
+  }
+
+  .site-header .mobile-nav__actions .header-button--primary:hover,
+  .site-header .mobile-nav__actions .header-button--primary:focus-visible {
+    background-color: var(--color-white);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  /* PHONE OUTLINE ON WHITE MOBILE MENU */
+
+  .site-header .mobile-nav__actions .header-button--phone {
+    background-color: transparent;
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .site-header .mobile-nav__actions .header-button--phone:hover,
+  .site-header .mobile-nav__actions .header-button--phone:focus-visible {
+    background-color: var(--color-accent-soft);
+    border-color: var(--color-accent);
+    color: var(--color-accent);
   }
 }
 
 /* =========================================
-   10. SMALL MOBILE / IPHONE
+   14. SMALL MOBILE / IPHONE
 ========================================= */
 
 @media (max-width: 480px) {
@@ -560,8 +634,6 @@
   .header-container {
     min-height: 70px;
   }
-
-  /* MOVE LOGO INDEPENDENTLY */
 
   .header-logo {
     transform: translateX(-8px);
@@ -592,44 +664,36 @@
     margin-top: 28px;
   }
 
-  .mobile-nav__actions .header-button {
+  .site-header .mobile-nav__actions .header-button {
     font-size: 17px;
-    border-radius: 12px;
+    border-radius: 8px;
   }
 }
 
 /* =========================================
-   11. ACCESSIBILITY - REDUCED MOTION
+   15. ACCESSIBILITY - REDUCED MOTION
 ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
   .site-header,
+  .desktop-nav__link,
   .desktop-nav__dropdown,
+  .desktop-nav__dropdown a,
   .mobile-nav,
+  .mobile-nav__link,
   .mobile-nav__submenu,
+  .mobile-nav__submenu a,
   .mobile-nav__dropdown-toggle svg,
-  .header-button {
+  .site-header .header-button,
+  .header-button svg {
     transition: none;
   }
-}
 
-/* ===== HEADER ===== */
-
-.desktop-nav__link {
-  font-weight: var(--font-weight-navigation);
-}
-
-.desktop-nav__dropdown a {
-  font-weight: var(--font-weight-navigation);
-}
-
-.header-button {
-  font-weight: var(--font-weight-button);
-}
-
-/* ===== MOBILE NAV ===== */
-
-.mobile-nav__link {
-  font-weight: var(--font-weight-navigation);
+  .header-button:hover .header-button__arrow,
+  .header-button:focus-visible .header-button__arrow,
+  .header-button:hover .header-button__icon,
+  .header-button:focus-visible .header-button__icon {
+    transform: none;
+  }
 }

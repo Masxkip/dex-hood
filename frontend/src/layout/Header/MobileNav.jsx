@@ -1,7 +1,11 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ChevronDown, ArrowRight } from "lucide-react";
+import {
+  ChevronDown,
+  ArrowRight,
+  Phone,
+} from "lucide-react";
 
 import { navigationLinks } from "./navigationData";
 
@@ -9,6 +13,7 @@ export default function MobileNav({
   isOpen,
   onClose,
   phoneNumber,
+  phoneDisplay,
 }) {
   const [expandedMenu, setExpandedMenu] = useState(null);
 
@@ -139,7 +144,7 @@ export default function MobileNav({
                     />
                   </button>
 
-                  {/* ===== DROPDOWN LINKS ===== */}
+                  {/* DROPDOWN LINKS */}
 
                   <div
                     className={`mobile-nav__submenu ${
@@ -186,30 +191,35 @@ export default function MobileNav({
 
           <Link
             to="/contact"
-            className="header-button header-button--primary"
+            className="btn btn--primary header-button header-button--primary"
             onClick={handleClose}
           >
             Schedule a Consultation
-            <ArrowRight size={21} />
+
+            <ArrowRight
+              size={21}
+              strokeWidth={2.4}
+              className="header-button__arrow"
+            />
           </Link>
 
           {/* PHONE BUTTON */}
 
-          {phoneNumber ? (
-            <a
-              href={`tel:${phoneNumber}`}
-              className="header-button header-button--outline"
-              onClick={handleClose}
-            >
-              Call Us
-              <ArrowRight size={21} />
-            </a>
-          ) : (
-            <span className="header-button header-button--outline header-button--disabled">
-              Number Coming Soon
-              <ArrowRight size={21} />
-            </span>
-          )}
+          <a
+            href={`tel:${phoneNumber}`}
+            className="btn btn--outline header-button header-button--phone"
+            aria-label={`Call HoodClean at ${phoneDisplay}`}
+            onClick={handleClose}
+          >
+            <Phone
+              size={20}
+              strokeWidth={2.2}
+              className="header-button__icon"
+            />
+
+            <span>{phoneDisplay}</span>
+          </a>
+
         </div>
       </div>
     </nav>

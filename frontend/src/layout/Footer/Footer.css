@@ -1,0 +1,646 @@
+
+/* =========================================
+   01. FOOTER BASE
+========================================= */
+
+.site-footer {
+  position: relative;
+  width: 100%;
+
+  background-color: var(--color-accent);
+  color: var(--color-white);
+
+  font-family: var(--font-family);
+}
+
+/* =========================================
+   02. FOOTER GRID
+========================================= */
+
+.site-footer__container {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.4fr)
+    minmax(0, 1fr)
+    minmax(0, 1.05fr)
+    minmax(0, 1.15fr);
+
+  align-items: start;
+
+  column-gap: clamp(28px, 3vw, 60px);
+  row-gap: 55px;
+
+  padding-top: clamp(70px, 7vw, 110px);
+  padding-bottom: clamp(65px, 6vw, 95px);
+}
+
+.site-footer__column {
+  min-width: 0;
+}
+
+/* =========================================
+   03. FOOTER BRAND
+========================================= */
+
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  min-width: 0;
+}
+
+.site-footer__brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  text-decoration: none;
+}
+
+.site-footer__logo {
+  display: block;
+
+  width: 100px;
+  height: 70px;
+
+  object-fit: cover;
+
+  border-radius: 8px;
+}
+
+.site-footer__brand-name {
+  color: var(--color-white);
+
+  font-family: var(--font-family);
+  font-size: clamp(24px, 2vw, 32px);
+  font-weight: var(--font-weight-heading);
+
+  letter-spacing: -0.045em;
+  line-height: 1.2;
+}
+
+/* BRAND DESCRIPTION */
+
+.site-footer__description {
+  max-width: 440px;
+
+  margin: 30px 0 0;
+
+  color: var(--color-text);
+
+  font-size: clamp(16px, 1.1vw, 18px);
+  font-weight: var(--font-weight-body);
+
+  line-height: 1.8;
+}
+
+/* LOCATION TAGLINE */
+
+.site-footer__tagline {
+  margin: 32px 0 0;
+
+  color: var(--color-white);
+
+  font-size: clamp(12px, 0.9vw, 14px);
+  font-weight: var(--font-weight-body);
+
+  line-height: 1.8;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   04. FOOTER COLUMN HEADINGS
+========================================= */
+
+.site-footer__heading {
+  margin: 0 0 30px;
+
+  color: var(--color-white);
+
+  font-family: var(--font-family);
+  font-size: clamp(17px, 1.3vw, 20px);
+  font-weight: var(--font-weight-navigation);
+
+  line-height: 1.4;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   05. QUICK ACCESS NAVIGATION
+========================================= */
+
+.site-footer__links {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  gap: 17px;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.site-footer__nav-item {
+  width: 100%;
+  min-width: 0;
+}
+
+/* SHARED NAVIGATION STYLES */
+
+.site-footer__nav-link,
+.site-footer__nav-toggle {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0;
+
+  background: transparent;
+  border: none;
+
+  color: var(--color-text);
+
+  font-family: var(--font-family);
+  font-size: clamp(15px, 1.05vw, 18px);
+  font-weight: var(--font-weight-navigation);
+
+  line-height: 1.6;
+  text-align: left;
+
+  text-decoration: none;
+  cursor: pointer;
+
+  transition:
+    color var(--transition),
+    transform var(--transition);
+}
+
+/* LINK HOVER */
+
+.site-footer__nav-link:hover,
+.site-footer__nav-link:focus-visible,
+.site-footer__nav-toggle:hover,
+.site-footer__nav-toggle:focus-visible,
+.site-footer__nav-toggle.is-active {
+  color: var(--color-white);
+}
+
+/* SUBTLE NAV MOVEMENT */
+
+.site-footer__nav-link:hover {
+  transform: translateX(4px);
+}
+
+/* =========================================
+   06. FOOTER DROPDOWN
+========================================= */
+
+.site-footer__chevron {
+  flex-shrink: 0;
+
+  color: var(--color-white);
+
+  transition: transform 0.3s ease;
+}
+
+.site-footer__chevron.is-rotated {
+  transform: rotate(180deg);
+}
+
+/* COLLAPSED DROPDOWN */
+
+.site-footer__submenu {
+  display: grid;
+  grid-template-rows: 0fr;
+
+  opacity: 0;
+
+  transition:
+    grid-template-rows 0.35s ease,
+    opacity 0.3s ease,
+    margin-top 0.3s ease;
+}
+
+/* EXPANDED DROPDOWN */
+
+.site-footer__submenu.is-expanded {
+  grid-template-rows: 1fr;
+
+  margin-top: 14px;
+
+  opacity: 1;
+}
+
+/* DROPDOWN INNER */
+
+.site-footer__submenu-inner {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  min-height: 0;
+  overflow: hidden;
+
+  padding-left: 16px;
+
+  border-left: 2px solid var(--color-white);
+}
+
+/* DROPDOWN LINKS */
+
+.site-footer__submenu-link {
+  display: block;
+
+  color: var(--color-text);
+
+  font-family: var(--font-family);
+  font-size: clamp(14px, 0.95vw, 16px);
+  font-weight: var(--font-weight-navigation);
+
+  line-height: 1.6;
+  text-decoration: none;
+
+  transition:
+    color var(--transition),
+    transform var(--transition);
+}
+
+.site-footer__submenu-link:hover,
+.site-footer__submenu-link:focus-visible {
+  color: var(--color-white);
+  transform: translateX(4px);
+}
+
+/* =========================================
+   07. OPENING HOURS
+========================================= */
+
+.site-footer__hours-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 17px;
+
+  width: 100%;
+}
+
+.site-footer__hours-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  width: 100%;
+}
+
+.site-footer__day,
+.site-footer__time {
+  font-family: var(--font-family);
+  font-size: clamp(14px, 0.95vw, 16px);
+  font-weight: var(--font-weight-body);
+
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.site-footer__day {
+  color: var(--color-text);
+}
+
+.site-footer__time {
+  color: var(--color-white);
+  text-align: right;
+}
+
+/* =========================================
+   08. GET IN TOUCH
+========================================= */
+
+.site-footer__contact-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 28px;
+}
+
+/* CONTACT ITEM */
+
+.site-footer__contact-item {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 15px;
+
+  min-width: 0;
+
+  color: var(--color-text);
+
+  font-family: var(--font-family);
+  font-size: clamp(15px, 1.05vw, 18px);
+  font-weight: var(--font-weight-body);
+
+  line-height: 1.7;
+  text-decoration: none;
+
+  overflow-wrap: anywhere;
+
+  transition: color var(--transition);
+}
+
+/* CONTACT ICON */
+
+.site-footer__contact-item > svg {
+  flex-shrink: 0;
+
+  margin-top: 4px;
+
+  color: var(--color-white);
+
+  transition: transform var(--transition);
+}
+
+/* CONTACT HOVER */
+
+a.site-footer__contact-item:hover,
+a.site-footer__contact-item:focus-visible {
+  color: var(--color-white);
+}
+
+a.site-footer__contact-item:hover svg {
+  transform: translateX(3px);
+}
+
+/* =========================================
+   09. BUSINESS ADDRESS
+========================================= */
+
+.site-footer__address address {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3px;
+
+  color: var(--color-text);
+
+  font-style: normal;
+  line-height: 1.7;
+}
+
+.site-footer__address strong {
+  margin-bottom: 4px;
+
+  color: var(--color-text);
+
+  font-weight: var(--font-weight-navigation);
+}
+
+/* =========================================
+   10. FOOTER BOTTOM
+========================================= */
+
+.site-footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-top: 25px;
+  padding-bottom: 28px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.site-footer__copyright {
+  margin: 0;
+
+  color: var(--color-white);
+
+  font-family: var(--font-family);
+  font-size: clamp(13px, 0.95vw, 15px);
+  font-weight: var(--font-weight-body);
+
+  line-height: 1.6;
+}
+
+/* =========================================
+   11. TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .site-footer__container {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    column-gap: 55px;
+    row-gap: 65px;
+
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .site-footer__description {
+    max-width: 480px;
+  }
+
+  .site-footer__hours-list {
+    max-width: 350px;
+  }
+}
+
+/* =========================================
+   12. MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .site-footer__container {
+    grid-template-columns: minmax(0, 1fr);
+
+    gap: 58px;
+
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+  /* BRAND */
+
+  .site-footer__brand-link {
+    gap: 12px;
+  }
+
+  .site-footer__logo {
+    width: 95px;
+    height: 65px;
+  }
+
+  .site-footer__brand-name {
+    font-size: 28px;
+  }
+
+  .site-footer__description {
+    max-width: 100%;
+
+    margin-top: 25px;
+
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .site-footer__tagline {
+    margin-top: 28px;
+
+    font-size: 12px;
+    line-height: 1.9;
+    letter-spacing: 0.12em;
+  }
+
+  /* HEADINGS */
+
+  .site-footer__heading {
+    margin-bottom: 25px;
+    font-size: 19px;
+  }
+
+  /* QUICK ACCESS */
+
+  .site-footer__links {
+    gap: 20px;
+  }
+
+  .site-footer__nav-link,
+  .site-footer__nav-toggle {
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  /* DROPDOWN */
+
+  .site-footer__submenu.is-expanded {
+    margin-top: 15px;
+  }
+
+  .site-footer__submenu-inner {
+    gap: 15px;
+    padding-left: 18px;
+  }
+
+  .site-footer__submenu-link {
+    font-size: 16px;
+  }
+
+  /* OPENING HOURS */
+
+  .site-footer__hours-list {
+    max-width: 440px;
+    gap: 18px;
+  }
+
+  .site-footer__day,
+  .site-footer__time {
+    font-size: 16px;
+  }
+
+  /* CONTACT */
+
+  .site-footer__contact-list {
+    gap: 25px;
+  }
+
+  .site-footer__contact-item {
+    gap: 14px;
+    font-size: 16px;
+  }
+
+  /* BOTTOM */
+
+  .site-footer__bottom {
+    padding-top: 25px;
+    padding-bottom: 30px;
+  }
+
+  .site-footer__copyright {
+    font-size: 14px;
+  }
+}
+
+/* =========================================
+   13. SMALL MOBILE / IPHONE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .site-footer__container {
+    gap: 52px;
+
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  .site-footer__logo {
+    width: 90px;
+    height: 62px;
+  }
+
+  .site-footer__brand-name {
+    font-size: 26px;
+  }
+
+  .site-footer__description {
+    font-size: 16px;
+  }
+
+  .site-footer__hours-list {
+    max-width: 100%;
+  }
+
+  .site-footer__hours-row {
+    gap: 10px;
+  }
+
+  .site-footer__day,
+  .site-footer__time {
+    font-size: 15px;
+  }
+
+  .site-footer__contact-item {
+    font-size: 16px;
+  }
+
+  .site-footer__copyright {
+    font-size: 13px;
+  }
+}
+
+/* =========================================
+   14. ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .site-footer__nav-link,
+  .site-footer__nav-toggle,
+  .site-footer__submenu,
+  .site-footer__submenu-link,
+  .site-footer__chevron,
+  .site-footer__contact-item,
+  .site-footer__contact-item > svg {
+    transition: none;
+  }
+
+  .site-footer__nav-link:hover,
+  .site-footer__submenu-link:hover,
+  a.site-footer__contact-item:hover svg {
+    transform: none;
+  }
+}

@@ -9,13 +9,17 @@ import MobileNav from "./MobileNav";
 
 import "./Header.css";
 
-// Add your actual business phone number when available.
-const PHONE_NUMBER = "";
+/* =========================================
+   BUSINESS PHONE NUMBER
+   Replace these values with your real number
+========================================= */
+
+const PHONE_NUMBER = "+16045550147";
+const PHONE_DISPLAY = "(604) 555-0147";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [showNumber, setShowNumber] = useState(false);
 
   const closeMenu = useCallback(() => {
     setMenuOpen(false);
@@ -87,31 +91,38 @@ export default function Header() {
         {/* ===== HEADER ACTIONS ===== */}
 
         <div className="header-actions">
+
+          {/* CONSULTATION BUTTON */}
+
           <Link
             to="/contact"
-            className="header-button header-button--primary"
+            className="btn btn--primary header-button header-button--primary"
           >
             Schedule a Consultation
-            <ArrowRight size={19} />
+
+            <ArrowRight
+              size={21}
+              strokeWidth={2.4}
+              className="header-button__arrow"
+            />
           </Link>
 
-          {PHONE_NUMBER ? (
-            <button
-              type="button"
-              className="header-button header-button--phone"
-              onClick={() =>
-                setShowNumber((current) => !current)
-              }
-            >
-              <Phone size={18} />
-              {showNumber ? PHONE_NUMBER : "Show Number"}
-            </button>
-          ) : (
-            <span className="header-button header-button--phone header-button--disabled">
-              <Phone size={18} />
-              Number Coming Soon
-            </span>
-          )}
+          {/* PHONE BUTTON */}
+
+          <a
+            href={`tel:${PHONE_NUMBER}`}
+            className="btn btn--outline header-button header-button--phone"
+            aria-label={`Call HoodClean at ${PHONE_DISPLAY}`}
+          >
+            <Phone
+              size={19}
+              strokeWidth={2.2}
+              className="header-button__icon"
+            />
+
+            <span>{PHONE_DISPLAY}</span>
+          </a>
+
         </div>
 
         {/* ===== MOBILE MENU TOGGLE ===== */}
@@ -134,6 +145,7 @@ export default function Header() {
             <Menu size={34} strokeWidth={2.2} />
           )}
         </button>
+
       </div>
 
       {/* ===== MOBILE NAVIGATION ===== */}
@@ -143,7 +155,9 @@ export default function Header() {
         isOpen={menuOpen}
         onClose={closeMenu}
         phoneNumber={PHONE_NUMBER}
+        phoneDisplay={PHONE_DISPLAY}
       />
+
     </header>
   );
 }

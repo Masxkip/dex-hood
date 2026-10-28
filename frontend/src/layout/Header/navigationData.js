@@ -8,10 +8,7 @@ export const navigationLinks = [
     label: "About Us",
     href: "/about",
   },
-  {
-    label: "Services",
-    href: "/services",
-  },
+  
   {
     label: "Commercial",
     children: [
@@ -57,5 +54,9 @@ export const navigationLinks = [
   {
     label: "FAQs",
     href: "/faqs",
+  },
+  {
+    label: "Contact us",
+    href: "/contact",
   },
 ];

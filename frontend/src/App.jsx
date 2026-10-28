@@ -9,12 +9,21 @@ import {
 } from "react-router-dom";
 
 import Header from "./layout/Header/Header";
+import Footer from "./layout/Footer/Footer";
+
+import QuoteCTA from "./components/QuoteCTA/QuoteCTA";
 
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Services from "./pages/Services/Services";
+
 import CommercialServiceDetail from "./pages/ServiceDetail/CommercialServiceDetail";
 import ResidentialServiceDetail from "./pages/ServiceDetail/ResidentialServiceDetail";
+
+/* ===== LEGAL PAGES ===== */
+
+import PrivacyPolicy from "./pages/Legal/PrivacyPolicy";
+import TermsOfService from "./pages/Legal/TermsOfService";
 
 /* =========================================
    ROUTES & SCROLL RESET
@@ -37,6 +46,7 @@ function PageContent() {
       className="page-transition"
     >
       <Routes>
+
         {/* GENERAL PAGES */}
 
         <Route
@@ -54,7 +64,6 @@ function PageContent() {
           element={<Services />}
         />
 
-       
         {/* COMMERCIAL SERVICES */}
 
         <Route
@@ -69,6 +78,18 @@ function PageContent() {
           element={<ResidentialServiceDetail />}
         />
 
+        {/* LEGAL PAGES */}
+
+        <Route
+          path="/privacy-policy"
+          element={<PrivacyPolicy />}
+        />
+
+        <Route
+          path="/terms-of-service"
+          element={<TermsOfService />}
+        />
+
       </Routes>
     </div>
   );
@@ -81,8 +102,23 @@ function PageContent() {
 export default function App() {
   return (
     <BrowserRouter>
+
+      {/* GLOBAL HEADER */}
+
       <Header />
+
+      {/* CURRENT PAGE */}
+
       <PageContent />
+
+      {/* GLOBAL QUOTE CTA */}
+
+      <QuoteCTA />
+
+      {/* GLOBAL FOOTER */}
+
+      <Footer />
+
     </BrowserRouter>
   );
 }

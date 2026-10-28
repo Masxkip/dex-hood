@@ -1,9 +1,16 @@
 
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import heroImage from "../../../assets/h1.jpg";
 
 import "./Hero.css";
+
+/* =========================================
+   BUSINESS PHONE NUMBER
+========================================= */
+
+const PHONE_NUMBER = "+16045550147";
+const PHONE_DISPLAY = "(604) 555-0147";
 
 export default function Hero() {
   return (
@@ -52,31 +59,34 @@ export default function Hero() {
 
           <div className="home-hero__actions">
 
-            {/* COMMERCIAL */}
+            {/* REQUEST A QUOTE */}
 
             <Link
-              to="/commercial/hood-cleaning"
+              to="/contact"
               className="btn btn--primary home-hero__button"
             >
-              Commercial
+              Request a Quote
+
               <ArrowRight
                 size={21}
                 strokeWidth={2.4}
               />
             </Link>
 
-            {/* RESIDENTIAL */}
+            {/* PHONE NUMBER */}
 
-            <Link
-              to="/residential/hood-cleaning"
+            <a
+              href={`tel:${PHONE_NUMBER}`}
               className="btn btn--outline home-hero__button"
+              aria-label={`Call HoodClean at ${PHONE_DISPLAY}`}
             >
-              Residential
-              <ArrowRight
+              <Phone
                 size={21}
                 strokeWidth={2.4}
               />
-            </Link>
+
+              <span>{PHONE_DISPLAY}</span>
+            </a>
 
           </div>
         </div>

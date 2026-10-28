@@ -1,0 +1,249 @@
+
+/* =========================================
+   01. QUOTE CTA BASE
+========================================= */
+
+.quote-cta {
+  position: relative;
+  width: 100%;
+
+  background-color: var(--color-white);
+  color: var(--color-text);
+}
+
+/* =========================================
+   02. CONTAINER
+========================================= */
+
+.quote-cta__container {
+  display: flex;
+  align-items: center;
+
+  padding-block: clamp(48px, 5vw, 72px);
+}
+
+/* =========================================
+   03. CONTENT
+========================================= */
+
+.quote-cta__content {
+  width: 100%;
+  max-width: 1200px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* =========================================
+   04. EYEBROW
+========================================= */
+
+.quote-cta__eyebrow {
+  display: block;
+
+  margin-bottom: 16px;
+
+  color: var(--color-primary);
+
+  font-size: var(--font-h4);
+  font-weight: var(--font-weight-heading);
+
+  line-height: 1.4;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   05. HEADING
+========================================= */
+
+.quote-cta__title {
+  max-width: 1150px;
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-family: var(--font-family);
+  font-size: var(--font-h2);
+  font-weight: var(--font-weight-heading);
+
+  line-height: 1.18;
+  letter-spacing: -0.045em;
+}
+
+/* =========================================
+   06. DESCRIPTION
+========================================= */
+
+.quote-cta__description {
+  max-width: 1040px;
+
+  margin: 18px 0 0;
+
+  color: var(--color-text-muted);
+
+  font-size: var(--font-body);
+  font-weight: var(--font-weight-body);
+
+  line-height: 1.55;
+}
+
+/* =========================================
+   07. CTA ACTIONS
+========================================= */
+
+.quote-cta__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 16px;
+  margin-top: 26px;
+}
+
+/* =========================================
+   08. GLOBAL BUTTON STYLING
+========================================= */
+
+/*
+   Button dimensions, colors, padding,
+   font size, border radius and hover
+   effects are inherited from:
+
+   .btn
+   .btn--primary
+
+   Defined in global CSS.
+*/
+
+/* =========================================
+   09. ARROW ANIMATION
+   MATCHES HERO.JSX
+========================================= */
+
+.quote-cta__button svg {
+  flex-shrink: 0;
+  transition: transform var(--transition);
+}
+
+.quote-cta__button:hover svg,
+.quote-cta__button:focus-visible svg {
+  transform: translateX(4px);
+}
+
+/* =========================================
+   10. TABLET
+========================================= */
+
+@media (max-width: 1024px) {
+
+  .quote-cta__container {
+    padding-block: 55px;
+  }
+
+  .quote-cta__content {
+    max-width: 100%;
+  }
+}
+
+/* =========================================
+   11. MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .quote-cta__container {
+    padding-block: 48px;
+  }
+
+  .quote-cta__content {
+    align-items: center;
+    text-align: center;
+  }
+
+  /* EYEBROW */
+
+  .quote-cta__eyebrow {
+    margin-bottom: 18px;
+
+    text-align: center;
+  }
+
+  /* HEADING */
+
+  .quote-cta__title {
+    max-width: 680px;
+    text-align: center;
+  }
+
+  /* DESCRIPTION */
+
+  .quote-cta__description {
+    max-width: 620px;
+
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  /* ACTIONS */
+
+  .quote-cta__actions {
+    width: 100%;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    margin-top: 28px;
+  }
+
+  /* MATCH HERO MOBILE BUTTON WIDTH */
+
+  .quote-cta__button {
+    width: 100%;
+  }
+}
+
+/* =========================================
+   12. SMALL MOBILE / IPHONE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .quote-cta__container {
+    padding-block: 40px;
+  }
+
+  .quote-cta__eyebrow {
+    margin-bottom: 16px;
+  }
+
+  .quote-cta__title {
+    line-height: 1.2;
+  }
+
+  .quote-cta__description {
+    margin-top: 18px;
+    line-height: 1.5;
+  }
+
+  .quote-cta__actions {
+    margin-top: 24px;
+  }
+}
+
+/* =========================================
+   13. ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .quote-cta__button svg {
+    transition: none;
+  }
+
+  .quote-cta__button:hover svg,
+  .quote-cta__button:focus-visible svg {
+    transform: none;
+  }
+}
