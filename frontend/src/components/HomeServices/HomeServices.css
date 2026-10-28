@@ -5,13 +5,13 @@
 
 .home-services {
   width: 100%;
-  background-color: var(--color-white);
+  background-color: var(--color-background);
 }
 
 /* Residential background */
 
 .home-services--residential {
-  background-color: var(--color-background);
+  background-color: var(--color-white);
 }
 
 /* =========================================

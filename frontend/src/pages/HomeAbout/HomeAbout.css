@@ -1,0 +1,250 @@
+
+/* =========================================
+   01. HOME ABOUT SECTION
+========================================= */
+
+.home-about {
+  position: relative;
+  width: 100%;
+
+  background-color: var(--color-white);
+  color: var(--color-text);
+
+  font-family: var(--font-family);
+}
+
+/* =========================================
+   02. SECTION CONTAINER
+========================================= */
+
+.home-about__container {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: clamp(45px, 6vw, 110px);
+
+  padding-block: clamp(45px, 5vw, 70px);
+}
+
+/* =========================================
+   03. LEFT - HEADING
+========================================= */
+
+.home-about__left {
+  display: flex;
+  align-items: flex-start;
+
+  width: 100%;
+  min-width: 0;
+}
+
+.home-about__title {
+  max-width: 720px;
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-family: var(--font-family);
+  font-size: var(--font-h2);
+  font-weight: var(--font-weight-heading);
+
+  line-height: 1.18;
+  letter-spacing: -0.045em;
+}
+
+/* =========================================
+   04. RIGHT - CONTENT
+========================================= */
+
+.home-about__right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 100%;
+  min-width: 0;
+}
+
+/* =========================================
+   05. DESCRIPTION
+========================================= */
+
+.home-about__description {
+  max-width: 780px;
+
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-family: var(--font-family);
+  font-size: var(--font-body);
+  font-weight: var(--font-weight-body);
+
+  line-height: 1.65;
+}
+
+/* SPACING BETWEEN PARAGRAPHS */
+
+.home-about__description
++ .home-about__description {
+  margin-top: 22px;
+}
+
+/* =========================================
+   06. GLOBAL CTA BUTTON
+========================================= */
+
+.home-about__button {
+  margin-top: 30px;
+}
+
+/* =========================================
+   07. BUTTON ARROW ANIMATION
+   SAME AS HERO
+========================================= */
+
+.home-about__button svg {
+  flex-shrink: 0;
+
+  transition: transform var(--transition);
+}
+
+.home-about__button:hover svg,
+.home-about__button:focus-visible svg {
+  transform: translateX(4px);
+}
+
+/* =========================================
+   08. TABLET
+========================================= */
+
+@media (max-width: 1024px) {
+
+  .home-about__container {
+    gap: 40px;
+
+    padding-block: 75px;
+  }
+
+  .home-about__description {
+    line-height: 1.6;
+  }
+
+  .home-about__button {
+    margin-top: 26px;
+  }
+}
+
+/* =========================================
+   09. MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .home-about__container {
+    grid-template-columns: minmax(0, 1fr);
+
+    gap: 30px;
+
+    padding-block: 65px;
+  }
+
+  /* CENTER HEADING */
+
+  .home-about__left {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .home-about__title {
+    max-width: 650px;
+
+    font-size: var(--font-h2);
+    font-weight: var(--font-weight-heading);
+
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  /* CENTER DESCRIPTION AND BUTTON */
+
+  .home-about__right {
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-about__description {
+    max-width: 650px;
+
+    font-size: var(--font-body);
+    font-weight: var(--font-weight-body);
+
+    line-height: 1.65;
+    text-align: center;
+  }
+
+  .home-about__description
+  + .home-about__description {
+    margin-top: 20px;
+  }
+
+  .home-about__button {
+    margin-top: 28px;
+  }
+}
+
+/* =========================================
+   10. SMALL MOBILE / IPHONE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .home-about__container {
+    gap: 25px;
+
+    padding-block: 55px;
+  }
+
+  .home-about__title {
+    font-size: var(--font-h2);
+    line-height: 1.2;
+  }
+
+  .home-about__description {
+    font-size: var(--font-body);
+    line-height: 1.65;
+  }
+
+  .home-about__description
+  + .home-about__description {
+    margin-top: 18px;
+  }
+
+  /* MATCH HERO MOBILE BUTTON WIDTH */
+
+  .home-about__button {
+    width: 100%;
+    margin-top: 26px;
+  }
+}
+
+/* =========================================
+   11. ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .home-about__button svg {
+    transition: none;
+  }
+
+  .home-about__button:hover svg,
+  .home-about__button:focus-visible svg {
+    transform: none;
+  }
+}

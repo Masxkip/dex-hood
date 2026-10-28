@@ -1,0 +1,403 @@
+
+/* =========================================
+   01. SERVICE AREAS BASE
+========================================= */
+
+.service-areas {
+  position: relative;
+  width: 100%;
+
+  background-color: var(--color-text);
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(20, 20, 20, 0.88) 0%,
+      rgba(0, 0, 0, 0.76) 50%,
+      rgba(0, 0, 0, 0.82) 100%
+    ),
+    var(--service-areas-image);
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  color: var(--color-white);
+  font-family: var(--font-family);
+}
+
+/* =========================================
+   02. MAIN CONTAINER
+========================================= */
+
+.service-areas__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-block: clamp(70px, 7vw, 110px);
+
+  text-align: center;
+}
+
+/* =========================================
+   03. INTRODUCTION
+========================================= */
+
+.service-areas__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  max-width: 1250px;
+}
+
+/* =========================================
+   04. EYEBROW
+========================================= */
+
+.service-areas__eyebrow {
+  display: block;
+
+  margin-bottom: 22px;
+
+  color: var(--color-accent-light);
+
+  font-size: var(--font-h4);
+  font-weight: var(--font-weight-heading);
+
+  line-height: 1.4;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   05. MAIN HEADING
+========================================= */
+
+.service-areas__title {
+  max-width: 1150px;
+  margin: 0;
+
+  color: var(--color-white);
+
+  font-family: var(--font-family);
+  font-size: var(--font-h2);
+  font-weight: var(--font-weight-heading);
+
+  line-height: 1.18;
+  letter-spacing: -0.045em;
+  text-align: center;
+}
+
+/* =========================================
+   06. DESCRIPTION
+========================================= */
+
+.service-areas__description {
+  max-width: 1100px;
+
+  margin: 28px 0 0;
+
+  color: var(--color-text-light);
+
+  font-family: var(--font-family);
+  font-size: var(--font-body);
+  font-weight: var(--font-weight-body);
+
+  line-height: 1.65;
+  text-align: center;
+}
+
+/* =========================================
+   07. LOCATIONS WRAPPER
+========================================= */
+
+.service-areas__locations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  max-width: 1250px;
+
+  margin-top: clamp(38px, 4vw, 60px);
+}
+
+/* =========================================
+   08. LOCATIONS HEADING
+========================================= */
+
+.service-areas__locations-title {
+  margin: 0 0 26px;
+
+  color: var(--color-white);
+
+  font-family: var(--font-family);
+  font-size: var(--font-h3);
+  font-weight: var(--font-weight-heading);
+
+  line-height: 1.3;
+  text-align: center;
+}
+
+/* =========================================
+   09. LOCATION LIST
+========================================= */
+
+.service-areas__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  column-gap: 28px;
+  row-gap: 18px;
+
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+/* =========================================
+   10. INDIVIDUAL LOCATIONS
+========================================= */
+
+.service-areas__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  color: var(--color-white);
+
+  font-family: var(--font-family);
+  font-size: clamp(15px, 1.1vw, 18px);
+  font-weight: var(--font-weight-body);
+
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+/* =========================================
+   11. SMALL ORANGE DOT
+========================================= */
+
+.service-areas__dot {
+  display: inline-block;
+
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  background-color: var(--color-accent);
+
+  border-radius: 50%;
+}
+
+/* =========================================
+   12. ADDITIONAL NOTE
+========================================= */
+
+.service-areas__note {
+  max-width: 750px;
+
+  margin: 32px 0 0;
+
+  color: var(--color-text-light);
+
+  font-family: var(--font-family);
+  font-size: clamp(14px, 1vw, 16px);
+  font-weight: var(--font-weight-body);
+
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* =========================================
+   13. TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .service-areas__container {
+    padding-block: 80px;
+  }
+
+  .service-areas__intro {
+    max-width: 900px;
+  }
+
+  .service-areas__description {
+    max-width: 850px;
+  }
+
+  .service-areas__list {
+    column-gap: 23px;
+    row-gap: 16px;
+  }
+
+  .service-areas__locations {
+    margin-top: 45px;
+  }
+}
+
+/* =========================================
+   14. MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .service-areas {
+    background-position: 55% center;
+  }
+
+  .service-areas__container {
+    padding-block: 65px;
+  }
+
+  /* INTRODUCTION */
+
+  .service-areas__intro {
+    max-width: 100%;
+    align-items: center;
+  }
+
+  /* EYEBROW */
+
+  .service-areas__eyebrow {
+    margin-bottom: 18px;
+
+    font-size: var(--font-h4);
+    text-align: center;
+  }
+
+  /* MAIN HEADING */
+
+  .service-areas__title {
+    max-width: 650px;
+
+    font-size: var(--font-h2);
+    font-weight: var(--font-weight-heading);
+
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  /* DESCRIPTION */
+
+  .service-areas__description {
+    max-width: 650px;
+
+    margin-top: 24px;
+
+    font-size: var(--font-body);
+    font-weight: var(--font-weight-body);
+
+    line-height: 1.65;
+    text-align: center;
+  }
+
+  /* LOCATIONS */
+
+  .service-areas__locations {
+    margin-top: 38px;
+  }
+
+  .service-areas__locations-title {
+    margin-bottom: 24px;
+
+    font-size: var(--font-h3);
+    text-align: center;
+  }
+
+  /* LOCATION LIST */
+
+  .service-areas__list {
+    column-gap: 20px;
+    row-gap: 15px;
+
+    justify-content: center;
+  }
+
+  .service-areas__item {
+    gap: 8px;
+    font-size: 16px;
+  }
+
+  .service-areas__dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .service-areas__note {
+    margin-top: 28px;
+    font-size: 14px;
+  }
+}
+
+/* =========================================
+   15. SMALL MOBILE / IPHONE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .service-areas__container {
+    padding-block: 55px;
+  }
+
+  .service-areas__eyebrow {
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+
+  .service-areas__title {
+    font-size: var(--font-h2);
+    line-height: 1.2;
+  }
+
+  .service-areas__description {
+    margin-top: 22px;
+
+    font-size: var(--font-body);
+    line-height: 1.6;
+  }
+
+  .service-areas__locations {
+    margin-top: 34px;
+  }
+
+  .service-areas__locations-title {
+    margin-bottom: 22px;
+    font-size: var(--font-h3);
+  }
+
+  .service-areas__list {
+    column-gap: 15px;
+    row-gap: 14px;
+  }
+
+  .service-areas__item {
+    gap: 7px;
+    font-size: 14px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .service-areas__dot {
+    width: 5px;
+    height: 5px;
+  }
+
+  .service-areas__note {
+    margin-top: 26px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
