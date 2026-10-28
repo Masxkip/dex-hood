@@ -16,11 +16,10 @@ import QuoteCTA from "./components/QuoteCTA/QuoteCTA";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Services from "./pages/Services/Services";
+import FAQs from "./pages/FAQs/FAQs";
 
 import CommercialServiceDetail from "./pages/ServiceDetail/CommercialServiceDetail";
 import ResidentialServiceDetail from "./pages/ServiceDetail/ResidentialServiceDetail";
-
-/* ===== LEGAL PAGES ===== */
 
 import PrivacyPolicy from "./pages/Legal/PrivacyPolicy";
 import TermsOfService from "./pages/Legal/TermsOfService";
@@ -62,6 +61,13 @@ function PageContent() {
         <Route
           path="/services"
           element={<Services />}
+        />
+
+        {/* FAQ PAGE */}
+
+        <Route
+          path="/faqs"
+          element={<FAQs />}
         />
 
         {/* COMMERCIAL SERVICES */}
@@ -107,11 +113,11 @@ export default function App() {
 
       <Header />
 
-      {/* CURRENT PAGE */}
+      {/* PAGE CONTENT */}
 
       <PageContent />
 
-      {/* GLOBAL QUOTE CTA */}
+      {/* GLOBAL CTA */}
 
       <QuoteCTA />
 

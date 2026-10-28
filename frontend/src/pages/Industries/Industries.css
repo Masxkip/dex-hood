@@ -1,0 +1,432 @@
+
+/* =========================================
+   01. INDUSTRIES SECTION
+========================================= */
+
+.industries {
+  position: relative;
+  width: 100%;
+
+  background-color: var(--color-background);
+  color: var(--color-text);
+
+  font-family: var(--font-family);
+}
+
+/* =========================================
+   02. SECTION CONTAINER
+========================================= */
+
+.industries__container {
+  padding-block: var(--section-spacing);
+}
+
+/* =========================================
+   03. SECTION INTRODUCTION
+========================================= */
+
+.industries__intro {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 2.15fr)
+    minmax(0, 0.85fr);
+
+  align-items: start;
+
+  column-gap: clamp(40px, 5vw, 100px);
+  row-gap: 24px;
+}
+
+/* =========================================
+   04. MAIN HEADING
+========================================= */
+
+.industries__title {
+  max-width: 1050px;
+
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-family: var(--font-family);
+  font-size: var(--font-h2);
+  font-weight: var(--font-weight-heading);
+
+  line-height: 1.18;
+  letter-spacing: -0.045em;
+}
+
+/* =========================================
+   05. INTRO DESCRIPTION
+========================================= */
+
+.industries__intro-description {
+  max-width: 410px;
+
+  margin: 0;
+
+  color: var(--color-text-muted);
+
+  font-family: var(--font-family);
+  font-size: var(--font-body);
+  font-weight: var(--font-weight-body);
+
+  line-height: 1.6;
+}
+
+/* =========================================
+   06. INDUSTRIES GRID
+========================================= */
+
+.industries__grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  column-gap: clamp(22px, 2.8vw, 48px);
+  row-gap: clamp(60px, 6vw, 95px);
+
+  margin-top: clamp(50px, 5.5vw, 90px);
+}
+
+/* =========================================
+   07. INDUSTRY CARD
+========================================= */
+
+.industry-card {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+
+  padding-left: clamp(16px, 1.6vw, 30px);
+
+  border-left: 1px solid var(--color-accent);
+}
+
+/* =========================================
+   08. CARD IMAGE
+========================================= */
+
+.industry-card__image-wrapper {
+  width: 100%;
+
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+
+  background-color: var(--color-accent-soft);
+}
+
+.industry-card__image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+/* =========================================
+   09. CARD CONTENT
+========================================= */
+
+.industry-card__content {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+/* =========================================
+   10. CARD HEADING
+========================================= */
+
+.industry-card__title {
+  margin: 30px 0 15px;
+
+  color: var(--color-text);
+
+  font-family: var(--font-family);
+  font-size: var(--font-h3);
+  font-weight: var(--font-weight-heading);
+
+  line-height: 1.3;
+  letter-spacing: -0.035em;
+
+  text-align: center;
+}
+
+/* =========================================
+   11. CARD DESCRIPTION
+========================================= */
+
+.industry-card__description {
+  margin: 0;
+
+  color: var(--color-text-muted);
+
+  font-family: var(--font-family);
+  font-size: var(--font-body);
+  font-weight: var(--font-weight-body);
+
+  line-height: 1.65;
+  text-align: left;
+}
+
+/* =========================================
+   12. TABLET / SMALL DESKTOP
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .industries__intro {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .industries__title {
+    max-width: 900px;
+  }
+
+  .industries__intro-description {
+    max-width: 700px;
+  }
+
+  .industries__grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    column-gap: 32px;
+    row-gap: 65px;
+
+    margin-top: 60px;
+  }
+
+  .industry-card {
+    padding-left: 20px;
+  }
+}
+
+/* =========================================
+   13. MOBILE LAYOUT
+========================================= */
+
+@media (max-width: 768px) {
+
+  .industries__container {
+    padding-block: 70px;
+  }
+
+  /* CENTER INTRO */
+
+  .industries__intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 24px;
+
+    text-align: center;
+  }
+
+  /* CENTER MAIN HEADING */
+
+  .industries__title {
+    width: 100%;
+    max-width: 650px;
+
+    font-size: var(--font-h2);
+    font-weight: var(--font-weight-heading);
+
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  /* CENTER INTRO DESCRIPTION */
+
+  .industries__intro-description {
+    max-width: 600px;
+
+    font-size: var(--font-body);
+    font-weight: var(--font-weight-body);
+
+    line-height: 1.65;
+    text-align: center;
+  }
+
+  /* STACK CARDS VERTICALLY */
+
+  .industries__grid {
+    grid-template-columns: minmax(0, 1fr);
+
+    gap: 55px;
+
+    margin-top: 55px;
+  }
+
+  /* REMOVE DESKTOP BORDER */
+
+  .industry-card {
+    padding-left: 0;
+    border-left: none;
+
+    align-items: center;
+  }
+
+  /* FULL WIDTH IMAGE */
+
+  .industry-card__image-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+  }
+
+  /* CENTER CARD CONTENT */
+
+  .industry-card__content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .industry-card__title {
+    max-width: 550px;
+
+    margin-top: 25px;
+    margin-bottom: 15px;
+
+    font-size: var(--font-h3);
+    font-weight: var(--font-weight-heading);
+
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  .industry-card__description {
+    max-width: 620px;
+
+    font-size: var(--font-body);
+    font-weight: var(--font-weight-body);
+
+    line-height: 1.7;
+    text-align: center;
+  }
+}
+
+/* =========================================
+   14. SMALL MOBILE / IPHONE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .industries__container {
+    padding-block: 60px;
+  }
+
+  /* SECTION HEADING */
+
+  .industries__title {
+    font-size: var(--font-h2);
+    line-height: 1.2;
+  }
+
+  .industries__intro-description {
+    font-size: var(--font-body);
+    line-height: 1.65;
+  }
+
+  /* CARD SPACING */
+
+  .industries__grid {
+    gap: 50px;
+    margin-top: 48px;
+  }
+
+  /* IMAGES */
+
+  .industry-card__image-wrapper {
+    aspect-ratio: 16 / 10;
+  }
+
+  /* CARD HEADING */
+
+  .industry-card__title {
+    margin-top: 24px;
+    margin-bottom: 14px;
+
+    font-size: var(--font-h3);
+    line-height: 1.3;
+  }
+
+  /* CARD DESCRIPTION */
+
+  .industry-card__description {
+    font-size: var(--font-body);
+    line-height: 1.65;
+  }
+}
+
+
+
+
+/* =========================================
+   DESKTOP - COMPACT INDUSTRIES SECTION
+========================================= */
+
+@media (min-width: 1101px) {
+
+  /* REDUCE SECTION HEIGHT */
+
+  .industries__container {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  /* REDUCE INTRO SPACING */
+
+  .industries__intro {
+    column-gap: 50px;
+  }
+
+  /* REDUCE INTRO DESCRIPTION HEIGHT */
+
+  .industries__intro-description {
+    line-height: 1.5;
+  }
+
+  /* REDUCE GRID SPACING */
+
+  .industries__grid {
+    margin-top: 42px;
+
+    column-gap: 28px;
+    row-gap: 48px;
+  }
+
+  /* REDUCE IMAGE HEIGHT */
+
+  .industry-card__image-wrapper {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* REDUCE CARD INNER SPACING */
+
+  .industry-card {
+    padding-left: 18px;
+  }
+
+  /* REDUCE HEADING SPACING */
+
+  .industry-card__title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  /* REDUCE DESCRIPTION LINE HEIGHT */
+
+  .industry-card__description {
+    line-height: 1.5;
+  }
+}

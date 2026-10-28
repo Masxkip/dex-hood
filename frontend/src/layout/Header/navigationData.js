@@ -51,7 +51,7 @@ export const navigationLinks = [
       },
     ],
   },
-  {
+    {
     label: "FAQs",
     href: "/faqs",
   },
