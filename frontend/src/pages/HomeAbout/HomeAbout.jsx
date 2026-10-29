@@ -23,8 +23,8 @@ export default function HomeAbout() {
             id="home-about-heading"
             className="heading-section home-about__title"
           >
-            Professional Commercial & Residential
-            Hood Cleaning in Greater Vancouver
+            Providing <span className="text-accent">Commercial & Residential Hood </span>
+            Cleaning in Greater Vancouver, BC
           </h2>
 
         </div>

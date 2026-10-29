@@ -4,6 +4,8 @@ import HomeServices from "../../components/HomeServices/HomeServices";
 import FAQSection from "../../components/FAQ/FAQSection";
 import Industries from "../Industries/Industries";
 import ServiceAreas from "../../components/ServiceAreas/ServiceAreas";
+import ChooseUs from "../ChooseUs/ChooseUs";
+import WhyChoose from "../WhyChoose/WhyChoose";
 
 
 
@@ -13,6 +15,8 @@ export default function Home() {
       <Hero />
       <HomeAbout />
       <HomeServices />
+      <ChooseUs />
+      <WhyChoose />
       <ServiceAreas />
       <Industries />
       <FAQSection variant="home" />

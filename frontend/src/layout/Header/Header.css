@@ -270,7 +270,7 @@
 .site-header .header-button--phone:hover,
 .site-header .header-button--phone:focus-visible {
   background-color: var(--color-white);
-  border-color: var(--color-white);
+  border-color: var(--color-accent);
   color: var(--color-accent);
 }
 

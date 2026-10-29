@@ -1,0 +1,477 @@
+
+/* =========================================
+   01. WHY CHOOSE SECTION
+========================================= */
+
+.why-choose {
+  position: relative;
+  width: 100%;
+
+  background-color: var(--color-white);
+  color: var(--color-text);
+
+  font-family: var(--font-family);
+}
+
+/* =========================================
+   02. MAIN CONTAINER
+========================================= */
+
+.why-choose__container {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  grid-template-areas: "content media";
+
+  align-items: stretch;
+  gap: 0;
+
+  width: 100%;
+}
+
+/* =========================================
+   03. LEFT CONTENT
+========================================= */
+
+.why-choose__content {
+  grid-area: content;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 100%;
+  min-width: 0;
+
+  padding-block: clamp(40px, 4vw, 65px);
+
+  padding-left: max(
+    var(--page-gutter),
+    calc((100vw - var(--container-width)) / 2)
+  );
+
+  padding-right: clamp(24px, 3vw, 55px);
+}
+
+/* =========================================
+   04. EYEBROW
+========================================= */
+
+.why-choose__eyebrow {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: var(--color-primary);
+
+  font-size: var(--font-h4);
+  font-weight: var(--font-weight-heading);
+
+  line-height: 1.4;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   05. MAIN HEADING
+========================================= */
+
+.why-choose__title {
+  max-width: 740px;
+
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-family: var(--font-family);
+  font-size: var(--font-h2);
+  font-weight: var(--font-weight-heading);
+
+  line-height: 1.18;
+  letter-spacing: -0.045em;
+}
+
+/* =========================================
+   06. SHORT INTRO DESCRIPTION
+========================================= */
+
+.why-choose__intro {
+  max-width: 680px;
+
+  margin: 16px 0 0;
+
+  color: var(--color-text-muted);
+
+  font-family: var(--font-family);
+  font-size: var(--font-body);
+  font-weight: var(--font-weight-body);
+
+  line-height: 1.5;
+}
+
+/* =========================================
+   07. REASONS WRAPPER
+========================================= */
+
+.why-choose__reasons {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  width: 100%;
+  max-width: 760px;
+
+  margin-top: 26px;
+}
+
+/* =========================================
+   08. REASON PARAGRAPHS
+========================================= */
+
+.why-choose__reason {
+  margin: 0;
+
+  color: var(--color-text-muted);
+
+  font-family: var(--font-family);
+  font-size: var(--font-body);
+  font-weight: var(--font-weight-body);
+
+  line-height: 1.55;
+}
+
+/* BOLD INTRODUCTORY TEXT */
+
+.why-choose__reason-label {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* =========================================
+   09. BENEFITS LIST
+========================================= */
+
+.why-choose__benefits {
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+
+  width: 100%;
+
+  margin: 28px 0 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+/* =========================================
+   10. INDIVIDUAL BENEFIT
+========================================= */
+
+.why-choose__benefit {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  width: 100%;
+}
+
+/* =========================================
+   11. OUTLINED ORANGE CHECK CIRCLE
+========================================= */
+
+.why-choose__check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 31px;
+  height: 31px;
+
+  flex-shrink: 0;
+
+  background-color: transparent;
+  border: 2px solid var(--color-accent);
+  border-radius: 50%;
+
+  color: var(--color-accent);
+}
+
+.why-choose__check svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+/* =========================================
+   12. BENEFIT TEXT
+========================================= */
+
+.why-choose__benefit-text {
+  color: var(--color-text);
+
+  font-family: var(--font-family);
+  font-size: var(--font-body);
+  font-weight: var(--font-weight-body);
+
+  line-height: 1.45;
+}
+
+/* =========================================
+   13. RIGHT IMAGE AREA
+========================================= */
+
+.why-choose__media {
+  grid-area: media;
+
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+
+  border: none;
+  border-radius: 0;
+
+  background-color: var(--color-background);
+}
+
+/* =========================================
+   14. IMAGE
+========================================= */
+
+.why-choose__image {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  max-width: none;
+
+  object-fit: cover;
+  object-position: center;
+
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  border-radius: 0;
+}
+
+/* =========================================
+   15. TABLET
+========================================= */
+
+@media (max-width: 1100px) and (min-width: 901px) {
+
+  .why-choose__content {
+    padding: 42px 30px 42px var(--page-gutter);
+  }
+
+  .why-choose__eyebrow {
+    margin-bottom: 10px;
+  }
+
+  .why-choose__intro {
+    margin-top: 14px;
+  }
+
+  .why-choose__reasons {
+    gap: 14px;
+    margin-top: 22px;
+  }
+
+  .why-choose__benefits {
+    gap: 12px;
+    margin-top: 24px;
+  }
+}
+
+/* =========================================
+   16. MOBILE
+   IMAGE FIRST - CONTENT SECOND
+========================================= */
+
+@media (max-width: 900px) {
+
+  .why-choose__container {
+    grid-template-columns: minmax(0, 1fr);
+
+    grid-template-areas:
+      "media"
+      "content";
+
+    gap: 0;
+  }
+
+  /* ===== IMAGE FIRST ===== */
+
+  .why-choose__media {
+    width: 100%;
+    min-height: 0;
+
+    aspect-ratio: 16 / 9;
+
+    border: none;
+    border-radius: 0;
+  }
+
+  .why-choose__image {
+    object-position: center;
+  }
+
+  /* ===== CONTENT BELOW IMAGE ===== */
+
+  .why-choose__content {
+    width: 100%;
+
+    padding: 45px var(--page-gutter);
+
+    align-items: center;
+    text-align: center;
+  }
+
+  /* EYEBROW */
+
+  .why-choose__eyebrow {
+    margin-bottom: 12px;
+    text-align: center;
+  }
+
+  /* HEADING */
+
+  .why-choose__title {
+    max-width: 680px;
+
+    font-size: var(--font-h2);
+    font-weight: var(--font-weight-heading);
+
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  /* INTRO */
+
+  .why-choose__intro {
+    max-width: 650px;
+
+    margin-top: 16px;
+
+    font-size: var(--font-body);
+    line-height: 1.55;
+
+    text-align: center;
+  }
+
+  /* REASONS */
+
+  .why-choose__reasons {
+    max-width: 650px;
+
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .why-choose__reason {
+    font-size: var(--font-body);
+    line-height: 1.6;
+
+    text-align: center;
+  }
+
+  /* CHECKLIST */
+
+  .why-choose__benefits {
+    width: 100%;
+    max-width: 600px;
+
+    gap: 14px;
+    margin-top: 26px;
+  }
+
+  .why-choose__benefit {
+    gap: 12px;
+    text-align: left;
+  }
+
+  .why-choose__benefit-text {
+    font-size: var(--font-body);
+    line-height: 1.45;
+  }
+}
+
+/* =========================================
+   17. SMALL MOBILE / IPHONE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .why-choose__media {
+    aspect-ratio: 16 / 10;
+  }
+
+  .why-choose__content {
+    padding-top: 35px;
+    padding-bottom: 40px;
+  }
+
+  .why-choose__eyebrow {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  .why-choose__title {
+    font-size: var(--font-h2);
+    line-height: 1.2;
+  }
+
+  .why-choose__intro {
+    margin-top: 14px;
+    line-height: 1.5;
+  }
+
+  .why-choose__reasons {
+    gap: 14px;
+    margin-top: 22px;
+  }
+
+  .why-choose__reason {
+    line-height: 1.55;
+  }
+
+  .why-choose__benefits {
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .why-choose__benefit {
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .why-choose__check {
+    width: 28px;
+    height: 28px;
+  }
+
+  .why-choose__check svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .why-choose__benefit-text {
+    line-height: 1.45;
+  }
+}

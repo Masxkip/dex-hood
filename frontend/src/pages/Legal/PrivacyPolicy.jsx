@@ -1,9 +1,14 @@
 
 import LegalLayout from "./LegalLayout";
 
+
 export default function PrivacyPolicy() {
   return (
+
+    
     <LegalLayout title="Privacy Policy">
+
+      
 
       {/* ===== INTRODUCTION ===== */}
 
