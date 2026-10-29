@@ -182,6 +182,35 @@
     transform var(--transition);
 }
 
+
+/* =========================================
+   FOOTER CATEGORY LINKS
+========================================= */
+
+.site-footer__nav-parent {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+}
+
+/* SEPARATE DROPDOWN ARROW */
+
+.site-footer__nav-parent .site-footer__nav-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 32px;
+  height: 32px;
+
+  padding: 4px;
+  border-radius: var(--radius-sm);
+}
+
+
 /* LINK HOVER */
 
 .site-footer__nav-link:hover,

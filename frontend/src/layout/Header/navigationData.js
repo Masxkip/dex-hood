@@ -8,10 +8,9 @@ export const navigationLinks = [
     label: "About Us",
     href: "/about",
   },
-  
-  
   {
     label: "Commercial",
+    href: "/services#commercial",
     children: [
       {
         label: "Commercial Hood Cleaning",
@@ -33,6 +32,7 @@ export const navigationLinks = [
   },
   {
     label: "Residential",
+    href: "/services#residential",
     children: [
       {
         label: "Residential Range Hood Cleaning",
@@ -52,7 +52,7 @@ export const navigationLinks = [
       },
     ],
   },
-    {
+  {
     label: "FAQs",
     href: "/faqs",
   },

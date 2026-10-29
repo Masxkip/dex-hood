@@ -30,16 +30,48 @@ import Reviews from "./pages/Reviews/Reviews";
    ROUTES & SCROLL RESET
 ========================================= */
 
+
 function PageContent() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
+
+  /* =========================================
+     ROUTE SCROLL RESET + SECTION NAVIGATION
+  ========================================= */
 
   useLayoutEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "instant",
+    const frame = requestAnimationFrame(() => {
+
+      /* SCROLL TO TARGETED SECTION */
+
+      const targetId = hash.slice(1);
+
+      if (targetId) {
+        const target =
+          document.getElementById(targetId);
+
+        if (target) {
+          target.scrollIntoView({
+            behavior: "instant",
+            block: "start",
+          });
+
+          return;
+        }
+      }
+
+      /* DEFAULT: SCROLL TO TOP */
+
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "instant",
+      });
     });
-  }, [pathname]);
+
+    return () => {
+      cancelAnimationFrame(frame);
+    };
+  }, [pathname, hash]);
 
   return (
     <div
@@ -48,50 +80,28 @@ function PageContent() {
     >
       <Routes>
 
-        {/* GENERAL PAGES */}
+        <Route path="/" element={<Home />} />
 
-        <Route
-          path="/"
-          element={<Home />}
-        />
+        <Route path="/about" element={<About />} />
 
-        <Route
-          path="/about"
-          element={<About />}
-        />
+        <Route path="/services" element={<Services />} />
 
-        <Route
-          path="/services"
-          element={<Services />}
-        />
-
-        {/* FAQ PAGE */}
-
-        <Route
-          path="/faqs"
-          element={<FAQs />}
-        />
-
-        {/* COMMERCIAL SERVICES */}
+        <Route path="/faqs" element={<FAQs />} />
 
         <Route
           path="/commercial/:slug"
           element={<CommercialServiceDetail />}
         />
 
-        {/* RESIDENTIAL SERVICES */}
-
         <Route
           path="/residential/:slug"
           element={<ResidentialServiceDetail />}
         />
 
-                <Route
+        <Route
           path="/reviews"
           element={<Reviews />}
         />
-
-        {/* LEGAL PAGES */}
 
         <Route
           path="/privacy-policy"
@@ -107,6 +117,7 @@ function PageContent() {
     </div>
   );
 }
+
 
 /* =========================================
    MAIN APP

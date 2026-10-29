@@ -199,7 +199,8 @@ export default function HomeServices() {
       {/* COMMERCIAL */}
 
       <ServicesSection
-        id="commercial-services"
+        id="commercial"
+        className="home-services home-services--commercial"
         variant="commercial"
         eyebrow="WHAT WE DO"
         title="Commercial Hood Cleaning Services"
@@ -210,7 +211,8 @@ export default function HomeServices() {
       {/* RESIDENTIAL */}
 
       <ServicesSection
-        id="residential-services"
+        id="residential"
+        className="home-services home-services--residential"
         variant="residential"
         eyebrow="FOR HOMEOWNERS"
         title="Residential Hood Cleaning Services"

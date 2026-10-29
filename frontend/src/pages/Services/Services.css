@@ -71,3 +71,33 @@
     padding-top: 28px;
   }
 }
+
+
+
+/* =========================================
+   SERVICE SECTION SCROLL TARGETS
+========================================= */
+
+.services-page #commercial,
+.services-page #residential {
+  scroll-margin-top: calc(var(--header-height) + 18px);
+}
+
+/* TABLET */
+
+@media (max-width: 1100px) {
+  .services-page #commercial,
+  .services-page #residential {
+    scroll-margin-top: 94px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+  .services-page #commercial,
+  .services-page #residential {
+    scroll-margin-top: 88px;
+  }
+}
+

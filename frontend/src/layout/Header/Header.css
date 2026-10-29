@@ -156,13 +156,18 @@
     visibility var(--transition);
 }
 
-.desktop-nav__item:hover .desktop-nav__dropdown,
-.desktop-nav__item:focus-within .desktop-nav__dropdown {
+
+/* =========================================
+   DESKTOP DROPDOWN - CONTROLLED BY REACT
+========================================= */
+
+.desktop-nav__item.is-open .desktop-nav__dropdown {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
   pointer-events: auto;
 }
+
 
 .desktop-nav__dropdown a {
   display: block;
@@ -502,6 +507,52 @@
 
     transition: color var(--transition);
   }
+
+  
+/* =========================================
+   MOBILE CATEGORY LINK + DROPDOWN ARROW
+========================================= */
+
+.mobile-nav__parent {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+/* CLICKABLE CATEGORY LABEL */
+
+.mobile-nav__parent-link {
+  flex: 1;
+  width: auto;
+  min-width: 0;
+}
+
+/* INDEPENDENT DROPDOWN ARROW */
+
+.mobile-nav__parent .mobile-nav__dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 48px;
+  width: 48px;
+  min-height: 48px;
+
+  padding: 8px;
+  border-radius: var(--radius-sm);
+}
+
+/* ARROW ROTATION */
+
+.mobile-nav__dropdown-toggle svg {
+  transition: transform 0.3s ease;
+}
+
+.mobile-nav__dropdown-toggle svg.is-rotated {
+  transform: rotate(180deg);
+}
+
 
   .mobile-nav__link:hover,
   .mobile-nav__link:focus-visible {

@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   ChevronDown,
   Phone,
@@ -46,10 +46,16 @@ const BUSINESS_HOURS = "8:00 AM – 8:00 PM";
    FOOTER COMPONENT
 ========================================= */
 
-export default function Footer() {
+
+/* =========================================
+   FOOTER CONTENT
+========================================= */
+
+function FooterContent() {
   const [expandedMenu, setExpandedMenu] = useState(null);
 
   const currentYear = new Date().getFullYear();
+
 
   /* ===== DROPDOWN TOGGLE ===== */
 
@@ -121,82 +127,95 @@ export default function Footer() {
 
           <ul className="site-footer__links">
 
-            {navigationLinks.map((item) => {
-              const isExpanded =
-                expandedMenu === item.label;
+           
+{navigationLinks.map((item) => {
+  const isExpanded =
+    expandedMenu === item.label;
 
-              const submenuId = `footer-submenu-${item.label
-                .toLowerCase()
-                .replace(/[^a-z0-9]+/g, "-")}`;
+  const submenuId = `footer-submenu-${item.label
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")}`;
 
-              return (
-                <li
-                  className="site-footer__nav-item"
-                  key={item.label}
+  return (
+    <li
+      className="site-footer__nav-item"
+      key={item.label}
+    >
+      {item.children ? (
+        <>
+          {/* CLICKABLE CATEGORY + DROPDOWN ARROW */}
+
+          <div className="site-footer__nav-parent">
+
+            <Link
+              to={item.href}
+              className="site-footer__nav-link"
+              onClick={closeDropdown}
+            >
+              {item.label}
+            </Link>
+
+            <button
+              type="button"
+              className={`site-footer__nav-toggle site-footer__nav-chevron-button ${
+                isExpanded ? "is-active" : ""
+              }`}
+              aria-label={`Toggle ${item.label} services`}
+              aria-expanded={isExpanded}
+              aria-controls={submenuId}
+              onClick={() =>
+                toggleDropdown(item.label)
+              }
+            >
+              <ChevronDown
+                size={18}
+                strokeWidth={2}
+                className={`site-footer__chevron ${
+                  isExpanded ? "is-rotated" : ""
+                }`}
+              />
+            </button>
+
+          </div>
+
+          {/* DROPDOWN CONTENT */}
+
+          <div
+            id={submenuId}
+            className={`site-footer__submenu ${
+              isExpanded ? "is-expanded" : ""
+            }`}
+            inert={!isExpanded}
+          >
+            <div className="site-footer__submenu-inner">
+
+              {item.children.map((child) => (
+                <Link
+                  key={child.href}
+                  to={child.href}
+                  className="site-footer__submenu-link"
+                  onClick={closeDropdown}
                 >
-                  {item.children ? (
-                    <>
-                      {/* EXPANDABLE NAVIGATION */}
+                  {child.label}
+                </Link>
+              ))}
 
-                      <button
-                        type="button"
-                        className={`site-footer__nav-toggle ${
-                          isExpanded ? "is-active" : ""
-                        }`}
-                        aria-expanded={isExpanded}
-                        aria-controls={submenuId}
-                        onClick={() =>
-                          toggleDropdown(item.label)
-                        }
-                      >
-                        <span>{item.label}</span>
+            </div>
+          </div>
+        </>
+      ) : (
+        <Link
+          to={item.href}
+          className="site-footer__nav-link"
+          onClick={closeDropdown}
+        >
+          {item.label}
+        </Link>
+      )}
+    </li>
+  );
+})}
 
-                        <ChevronDown
-                          size={18}
-                          strokeWidth={2}
-                          className={`site-footer__chevron ${
-                            isExpanded ? "is-rotated" : ""
-                          }`}
-                        />
-                      </button>
-
-                      {/* DROPDOWN CONTENT */}
-
-                      <div
-                        id={submenuId}
-                        className={`site-footer__submenu ${
-                          isExpanded ? "is-expanded" : ""
-                        }`}
-                        inert={!isExpanded}
-                      >
-                        <div className="site-footer__submenu-inner">
-
-                          {item.children.map((child) => (
-                            <Link
-                              key={child.href}
-                              to={child.href}
-                              className="site-footer__submenu-link"
-                              onClick={closeDropdown}
-                            >
-                              {child.label}
-                            </Link>
-                          ))}
-
-                        </div>
-                      </div>
-                    </>
-                  ) : (
-                    <Link
-                      to={item.href}
-                      className="site-footer__nav-link"
-                      onClick={closeDropdown}
-                    >
-                      {item.label}
-                    </Link>
-                  )}
-                </li>
-              );
-            })}
 
             {/* PRIVACY POLICY */}
 
@@ -343,4 +362,18 @@ export default function Footer() {
 
     </footer>
   );
+}
+
+
+/* =========================================
+   ROUTE-AWARE FOOTER
+
+   Automatically reset footer dropdown
+   state when navigating to another route.
+========================================= */
+
+export default function Footer() {
+  const { key: routeKey } = useLocation();
+
+  return <FooterContent key={routeKey} />;
 }

@@ -1,6 +1,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+
 import {
   ChevronDown,
   ArrowRight,
@@ -53,7 +54,7 @@ export default function MobileNav({
   }, [isOpen, onClose]);
 
   /* =========================================
-     CLOSE MENU
+     CLOSE MENU AND RESET DROPDOWNS
   ========================================= */
 
   const handleClose = () => {
@@ -112,82 +113,99 @@ export default function MobileNav({
     >
       <div className="mobile-nav__inner">
 
-        {/* ===== NAVIGATION LINKS ===== */}
+        {/* NAVIGATION LINKS */}
 
         <div className="mobile-nav__links">
-          {navigationLinks.map((item) => (
-            <div
-              className="mobile-nav__item"
-              key={item.label}
-            >
-              {item.children ? (
-                <>
-                  <button
-                    type="button"
-                    className="mobile-nav__link mobile-nav__dropdown-toggle"
-                    onClick={() =>
-                      toggleDropdown(item.label)
-                    }
-                    aria-expanded={
-                      expandedMenu === item.label
-                    }
-                  >
-                    <span>{item.label}</span>
 
-                    <ChevronDown
-                      size={22}
-                      className={
-                        expandedMenu === item.label
-                          ? "is-rotated"
-                          : ""
-                      }
-                    />
-                  </button>
+          {navigationLinks.map((item) => {
+            const isExpanded =
+              expandedMenu === item.label;
 
-                  {/* DROPDOWN LINKS */}
+            const submenuId = `mobile-submenu-${item.label
+              .toLowerCase()
+              .replace(/[^a-z0-9]+/g, "-")}`;
 
-                  <div
-                    className={`mobile-nav__submenu ${
-                      expandedMenu === item.label
-                        ? "is-expanded"
-                        : ""
-                    }`}
-                    inert={
-                      expandedMenu !== item.label ||
-                      !isOpen
-                    }
-                  >
-                    <div className="mobile-nav__submenu-inner">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          to={child.href}
-                          onClick={handleClose}
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
+            return (
+              <div
+                className="mobile-nav__item"
+                key={item.label}
+              >
+                {item.children ? (
+                  <>
+                    {/* CLICKABLE CATEGORY + SEPARATE ARROW */}
+
+                    <div className="mobile-nav__parent">
+
+                      <Link
+                        to={item.href}
+                        className="mobile-nav__link mobile-nav__parent-link"
+                        onClick={handleClose}
+                      >
+                        {item.label}
+                      </Link>
+
+                      <button
+                        type="button"
+                        className="mobile-nav__link mobile-nav__dropdown-toggle"
+                        aria-label={`Toggle ${item.label} services`}
+                        aria-expanded={isExpanded}
+                        aria-controls={submenuId}
+                        onClick={() =>
+                          toggleDropdown(item.label)
+                        }
+                      >
+                        <ChevronDown
+                          size={22}
+                          className={
+                            isExpanded ? "is-rotated" : ""
+                          }
+                        />
+                      </button>
+
                     </div>
-                  </div>
-                </>
-              ) : (
-                <Link
-                  className="mobile-nav__link"
-                  to={item.href}
-                  onClick={handleClose}
-                >
-                  {item.label}
-                </Link>
-              )}
-            </div>
-          ))}
+
+                    {/* SERVICE DROPDOWN */}
+
+                    <div
+                      id={submenuId}
+                      className={`mobile-nav__submenu ${
+                        isExpanded ? "is-expanded" : ""
+                      }`}
+                      inert={!isExpanded || !isOpen}
+                    >
+                      <div className="mobile-nav__submenu-inner">
+
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.href}
+                            to={child.href}
+                            onClick={handleClose}
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <Link
+                    className="mobile-nav__link"
+                    to={item.href}
+                    onClick={handleClose}
+                  >
+                    {item.label}
+                  </Link>
+                )}
+              </div>
+            );
+          })}
+
         </div>
 
-        {/* ===== MOBILE ACTION BUTTONS ===== */}
+        {/* MOBILE ACTION BUTTONS */}
 
         <div className="mobile-nav__actions">
-
-          {/* CONSULTATION BUTTON */}
 
           <Link
             to="/contact"
@@ -202,8 +220,6 @@ export default function MobileNav({
               className="header-button__arrow"
             />
           </Link>
-
-          {/* PHONE BUTTON */}
 
           <a
             href={`tel:${phoneNumber}`}
