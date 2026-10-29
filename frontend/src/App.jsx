@@ -25,6 +25,7 @@ import PrivacyPolicy from "./pages/Legal/PrivacyPolicy";
 import TermsOfService from "./pages/Legal/TermsOfService";
 
 import Reviews from "./pages/Reviews/Reviews";
+import Contact from "./pages/Contact/Contact";
 
 /* =========================================
    ROUTES & SCROLL RESET
@@ -97,6 +98,11 @@ function PageContent() {
           path="/residential/:slug"
           element={<ResidentialServiceDetail />}
         />
+
+        <Route
+        path="/contact"
+        element={<Contact />}
+      />
 
         <Route
           path="/reviews"
