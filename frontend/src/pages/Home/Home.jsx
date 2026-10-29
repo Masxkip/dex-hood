@@ -6,6 +6,7 @@ import Industries from "../Industries/Industries";
 import ServiceAreas from "../../components/ServiceAreas/ServiceAreas";
 import ChooseUs from "../ChooseUs/ChooseUs";
 import WhyChoose from "../WhyChoose/WhyChoose";
+import HomeReviews from "../Reviews/HomeReviews";
 
 
 
@@ -17,6 +18,7 @@ export default function Home() {
       <HomeServices />
       <ChooseUs />
       <WhyChoose />
+      <HomeReviews />
       <ServiceAreas />
       <Industries />
       <FAQSection variant="home" />

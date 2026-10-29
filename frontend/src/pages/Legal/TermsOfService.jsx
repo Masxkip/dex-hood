@@ -4,7 +4,11 @@ import LegalLayout from "./LegalLayout";
 
 export default function TermsOfService() {
   return (
-    <LegalLayout title="Terms of Service">
+    
+      <LegalLayout
+        title="Terms of Service"
+        description="Review the terms and conditions governing the use of the HoodClean website, service information, quotation requests, and online features."
+      >
 
       {/* ===== INTRODUCTION ===== */}
 

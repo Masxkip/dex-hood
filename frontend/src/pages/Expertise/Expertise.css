@@ -1,0 +1,627 @@
+
+/* =========================================
+   01. EXPERTISE SECTION
+========================================= */
+
+.expertise {
+  position: relative;
+  width: 100%;
+
+  background-color: var(--color-background);
+  color: var(--color-text);
+
+  font-family: var(--font-family);
+}
+
+/* =========================================
+   02. MAIN CONTAINER
+========================================= */
+
+.expertise__container {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  align-items: stretch;
+
+  gap: clamp(40px, 4.5vw, 75px);
+
+  padding-block: clamp(55px, 6vw, 90px);
+}
+
+/* =========================================
+   03. LEFT IMAGE
+========================================= */
+
+.expertise__media {
+  position: relative;
+
+  width: 100%;
+  min-width: 0;
+  min-height: 560px;
+
+  overflow: hidden;
+
+  background-color: var(--color-accent-soft);
+  border-radius: 24px;
+}
+
+.expertise__image {
+  position: absolute;
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+  max-width: none;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+/* =========================================
+   04. RIGHT CONTENT
+========================================= */
+
+.expertise__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  width: 100%;
+  min-width: 0;
+}
+
+/* =========================================
+   05. EYEBROW
+========================================= */
+
+.expertise__eyebrow {
+  display: block;
+
+  margin-bottom: 15px;
+
+  color: var(--color-primary);
+
+  font-size: var(--font-h4);
+  font-weight: var(--font-weight-heading);
+
+  line-height: 1.4;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   06. MAIN HEADING
+========================================= */
+
+.expertise__title {
+  max-width: 730px;
+
+  margin: 0;
+
+  color: var(--color-text);
+
+  font-family: var(--font-family);
+  font-size: var(--font-h2);
+  font-weight: var(--font-weight-heading);
+
+  line-height: 1.18;
+  letter-spacing: -0.045em;
+}
+
+/* =========================================
+   07. INTRODUCTION
+========================================= */
+
+.expertise__intro {
+  max-width: 680px;
+
+  margin: 20px 0 0;
+
+  color: var(--color-text-muted);
+
+  font-size: var(--font-body);
+  font-weight: var(--font-weight-body);
+
+  line-height: 1.6;
+}
+
+/* =========================================
+   08. ACCORDION WRAPPER
+========================================= */
+
+.expertise__accordion {
+  width: 100%;
+
+  margin-top: 35px;
+}
+
+/* =========================================
+   09. ACCORDION ITEM
+========================================= */
+
+.expertise__item {
+  width: 100%;
+
+  border-bottom: 1px solid
+    rgba(16, 37, 39, 0.12);
+}
+
+.expertise__item-heading {
+  margin: 0;
+  padding: 0;
+
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: normal;
+}
+
+/* =========================================
+   10. ACCORDION TRIGGER
+========================================= */
+
+.expertise__trigger {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  width: 100%;
+
+  padding: 21px 0;
+
+  background: transparent;
+  border: none;
+
+  color: var(--color-text);
+
+  font-family: var(--font-family);
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: color var(--transition);
+}
+
+.expertise__trigger:hover,
+.expertise__trigger:focus-visible {
+  color: var(--color-primary);
+}
+
+/* =========================================
+   11. ITEM NUMBER
+========================================= */
+
+.expertise__number {
+  flex-shrink: 0;
+
+  color: var(--color-primary);
+
+  font-size: clamp(14px, 1vw, 17px);
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+/* =========================================
+   12. ITEM TITLE
+========================================= */
+
+.expertise__item-title {
+  flex: 1;
+  min-width: 0;
+
+  font-family: var(--font-family);
+  font-size: var(--font-h3);
+  font-weight: var(--font-weight-heading);
+
+  line-height: 1.35;
+  letter-spacing: -0.035em;
+}
+
+/* =========================================
+   13. PLUS / MINUS CIRCLE
+========================================= */
+
+.expertise__toggle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  border: 2px solid var(--color-accent);
+  border-radius: 50%;
+
+  background-color: transparent;
+  color: var(--color-accent);
+
+  transition:
+    background-color var(--transition),
+    color var(--transition),
+    transform var(--transition);
+}
+
+/* ACTIVE ICON */
+
+.expertise__item--open .expertise__toggle-icon {
+  background-color: var(--color-accent);
+  color: var(--color-white);
+}
+
+/* HOVER ICON */
+
+.expertise__trigger:hover .expertise__toggle-icon {
+  transform: scale(1.06);
+}
+
+/* =========================================
+   14. ACCORDION PANEL ANIMATION
+========================================= */
+
+.expertise__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+
+  opacity: 0;
+
+  transition:
+    grid-template-rows 0.4s ease,
+    opacity 0.3s ease;
+}
+
+/* OPEN STATE */
+
+.expertise__item--open .expertise__panel {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}
+
+/* PANEL INNER */
+
+.expertise__panel-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* =========================================
+   15. EXPANDED DESCRIPTION
+========================================= */
+
+.expertise__answer {
+  max-width: 650px;
+
+  margin: 0;
+  padding: 0 50px 22px 35px;
+
+  color: var(--color-text-muted);
+
+  font-family: var(--font-family);
+  font-size: var(--font-body);
+  font-weight: var(--font-weight-body);
+
+  line-height: 1.65;
+}
+
+/* =========================================
+   16. TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .expertise__container {
+    gap: 35px;
+    padding-block: 65px;
+  }
+
+  .expertise__media {
+    min-height: 480px;
+    border-radius: 20px;
+  }
+
+  .expertise__accordion {
+    margin-top: 28px;
+  }
+
+  .expertise__trigger {
+    gap: 12px;
+    padding-block: 18px;
+  }
+
+  .expertise__toggle-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .expertise__answer {
+    padding-left: 28px;
+    padding-right: 25px;
+  }
+}
+
+/* =========================================
+   17. MOBILE - IMAGE FIRST
+========================================= */
+
+@media (max-width: 900px) {
+
+  .expertise__container {
+    grid-template-columns: minmax(0, 1fr);
+
+    gap: 38px;
+
+    padding-block: 55px;
+  }
+
+  /* IMAGE ABOVE CONTENT */
+
+  .expertise__media {
+    width: 100%;
+    min-height: 0;
+
+    aspect-ratio: 16 / 10;
+
+    border-radius: 18px;
+  }
+
+  .expertise__image {
+    object-position: center;
+  }
+
+  /* CONTENT BELOW IMAGE */
+
+  .expertise__content {
+    width: 100%;
+    align-items: center;
+
+    text-align: center;
+  }
+
+  /* EYEBROW */
+
+  .expertise__eyebrow {
+    margin-bottom: 14px;
+    text-align: center;
+  }
+
+  /* HEADING */
+
+  .expertise__title {
+    max-width: 680px;
+
+    font-size: var(--font-h2);
+    font-weight: var(--font-weight-heading);
+
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  /* INTRO */
+
+  .expertise__intro {
+    max-width: 650px;
+
+    margin-top: 18px;
+
+    font-size: var(--font-body);
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  /* ACCORDION */
+
+  .expertise__accordion {
+    width: 100%;
+    margin-top: 28px;
+  }
+
+  .expertise__trigger {
+    gap: 12px;
+    padding-block: 18px;
+  }
+
+  .expertise__number {
+    font-size: 15px;
+  }
+
+  .expertise__item-title {
+    font-size: var(--font-h3);
+  }
+
+  .expertise__toggle-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .expertise__answer {
+    padding: 0 35px 20px 28px;
+
+    font-size: var(--font-body);
+    line-height: 1.6;
+
+    text-align: left;
+  }
+}
+
+/* =========================================
+   18. SMALL MOBILE / IPHONE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .expertise__container {
+    gap: 30px;
+    padding-block: 45px;
+  }
+
+  .expertise__media {
+    aspect-ratio: 4 / 3;
+    border-radius: 14px;
+  }
+
+  .expertise__eyebrow {
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+
+  .expertise__title {
+    font-size: var(--font-h2);
+    line-height: 1.2;
+  }
+
+  .expertise__intro {
+    margin-top: 16px;
+    font-size: var(--font-body);
+  }
+
+  .expertise__accordion {
+    margin-top: 25px;
+  }
+
+  .expertise__trigger {
+    gap: 10px;
+    padding-block: 16px;
+  }
+
+  .expertise__number {
+    font-size: 13px;
+  }
+
+  .expertise__item-title {
+    font-size: clamp(17px, 4.5vw, 21px);
+    line-height: 1.4;
+  }
+
+  .expertise__toggle-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .expertise__toggle-icon svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .expertise__answer {
+    padding: 0 10px 18px 23px;
+
+    font-size: 16px;
+    line-height: 1.65;
+  }
+}
+
+/* =========================================
+   19. REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .expertise__trigger,
+  .expertise__toggle-icon,
+  .expertise__panel {
+    transition: none;
+  }
+
+  .expertise__trigger:hover .expertise__toggle-icon {
+    transform: none;
+  }
+}
+
+
+
+
+/* =========================================
+   COMPACT EXPERTISE SECTION - PC ONLY
+========================================= */
+
+@media (min-width: 901px) {
+
+  /* REDUCE OVERALL SECTION HEIGHT */
+
+  .expertise__container {
+    padding-top: 35px;
+    padding-bottom: 35px;
+
+    gap: 35px;
+  }
+
+  /* REDUCE IMAGE MINIMUM HEIGHT */
+
+  .expertise__media {
+    min-height: 0;
+    border-radius: 20px;
+  }
+
+  /* REDUCE EYEBROW SPACING */
+
+  .expertise__eyebrow {
+    margin-bottom: 10px;
+  }
+
+  /* MAKE HEADING MORE COMPACT */
+
+  .expertise__title {
+    line-height: 1.12;
+  }
+
+  /* REDUCE INTRO SPACING */
+
+  .expertise__intro {
+    margin-top: 12px;
+    line-height: 1.5;
+  }
+
+  /* MOVE ACCORDION CLOSER TO HEADING */
+
+  .expertise__accordion {
+    margin-top: 22px;
+  }
+
+  /* REDUCE ACCORDION ROW HEIGHT */
+
+  .expertise__trigger {
+    padding-top: 13px;
+    padding-bottom: 13px;
+
+    gap: 12px;
+  }
+
+  /* REDUCE NUMBER SPACING */
+
+  .expertise__number {
+    line-height: 1.3;
+  }
+
+  /* COMPACT ACCORDION TITLES */
+
+  .expertise__item-title {
+    line-height: 1.25;
+  }
+
+  /* SMALLER PLUS / MINUS CIRCLES */
+
+  .expertise__toggle-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .expertise__toggle-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* REDUCE EXPANDED ANSWER HEIGHT */
+
+  .expertise__answer {
+    padding: 0 25px 14px 28px;
+    line-height: 1.5;
+  }
+}

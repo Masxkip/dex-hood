@@ -414,3 +414,82 @@
     transition: none;
   }
 }
+
+
+
+
+/* =========================================
+   LEGAL PAGES - HERO2 INTEGRATION
+========================================= */
+
+/* REMOVE OLD PAGE OFFSET */
+
+.legal-page {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* CONTENT SPACING BELOW HERO */
+
+.legal-page__container {
+  padding-top: clamp(50px, 5vw, 80px);
+  padding-bottom: clamp(70px, 8vw, 120px);
+}
+
+/* LAST UPDATED SPACING */
+
+.legal-page__header {
+  margin-bottom: 40px;
+}
+
+.legal-page__updated {
+  margin: 0;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1024px) {
+
+  .legal-page__container {
+    padding-top: 55px;
+    padding-bottom: 80px;
+  }
+
+  .legal-page__header {
+    margin-bottom: 32px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .legal-page__container {
+    padding-top: 45px;
+    padding-bottom: 65px;
+  }
+
+  .legal-page__header {
+    margin-bottom: 28px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE / IPHONE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .legal-page__container {
+    padding-top: 35px;
+    padding-bottom: 55px;
+  }
+
+  .legal-page__header {
+    margin-bottom: 24px;
+  }
+}

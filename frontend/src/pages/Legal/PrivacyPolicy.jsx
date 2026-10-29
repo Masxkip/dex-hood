@@ -6,9 +6,11 @@ export default function PrivacyPolicy() {
   return (
 
     
-    <LegalLayout title="Privacy Policy">
-
-      
+    
+    <LegalLayout
+      title="Privacy Policy"
+      description="Learn how HoodClean collects, uses, and protects personal information when you visit our website or use our commercial and residential kitchen hood cleaning services."
+    >
 
       {/* ===== INTRODUCTION ===== */}
 

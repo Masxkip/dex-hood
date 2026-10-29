@@ -1,36 +1,49 @@
 
+import Hero2 from "../../components/Hero2/Hero2";
+
 import "./Legal.css";
 
 export default function LegalLayout({
-
+  title,
+  description,
   children,
 }) {
   return (
-    <main
-      className="legal-page"
-      aria-labelledby="legal-page-title"
-    >
+    <main className="legal-page">
+
+      {/* =====================================
+         HERO SECTION
+      ===================================== */}
+
+      <Hero2
+        title={title}
+        description={description}
+        buttonText="Request a Quote"
+        buttonLink="/contact"
+      />
+
+      {/* =====================================
+         LEGAL CONTENT
+      ===================================== */}
+
       <div className="container legal-page__container">
 
-        {/* ===== PAGE HEADER ===== */}
+        {/* LAST UPDATED */}
 
         <header className="legal-page__header">
-         
-
-         
-
           <p className="legal-page__updated">
-            Last updated: [25/10/26]
+            Last updated: October 25, 2026
           </p>
         </header>
 
-        {/* ===== LEGAL CONTENT ===== */}
+        {/* PAGE CONTENT */}
 
         <article className="legal-page__content">
           {children}
         </article>
 
       </div>
+
     </main>
   );
 }
