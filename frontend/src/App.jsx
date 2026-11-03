@@ -25,6 +25,7 @@ import PrivacyPolicy from "./pages/Legal/PrivacyPolicy";
 import TermsOfService from "./pages/Legal/TermsOfService";
 
 import Reviews from "./pages/Reviews/Reviews";
+import Expertise from "./pages/Expertise/Expertise";
 import Contact from "./pages/Contact/Contact";
 
 /* =========================================
@@ -107,6 +108,11 @@ function PageContent() {
         <Route
           path="/reviews"
           element={<Reviews />}
+        />
+
+        <Route
+          path="/expertise"
+          element={<Expertise />}
         />
 
         <Route
