@@ -1,9 +1,18 @@
-
 import { Link } from "react-router-dom";
 import { ArrowRight, Phone } from "lucide-react";
-import heroImage from "../../../assets/h1.jpg";
 
 import "./Hero.css";
+
+/* =========================================
+   CLOUDINARY IMAGE
+========================================= */
+
+// Reads your cloud name from the frontend .env file.
+const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
+
+// Replaces the previous local h1.jpg import.
+// Public ID: h1
+const heroImage = `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto/h1`;
 
 /* =========================================
    BUSINESS PHONE NUMBER
@@ -24,13 +33,12 @@ export default function Hero() {
             rgba(0, 0, 0, 0.62) 50%,
             rgba(0, 0, 0, 0.45) 100%
           ),
-          url(${heroImage})
+          url("${heroImage}")
         `,
       }}
     >
       <div className="container home-hero__container">
         <div className="home-hero__content">
-
           {/* ===== EYEBROW ===== */}
 
           <span className="eyebrow home-hero__eyebrow">
@@ -58,7 +66,6 @@ export default function Hero() {
           {/* ===== CTA BUTTONS ===== */}
 
           <div className="home-hero__actions">
-
             {/* REQUEST A QUOTE */}
 
             <Link
@@ -87,7 +94,6 @@ export default function Hero() {
 
               <span>{PHONE_DISPLAY}</span>
             </a>
-
           </div>
         </div>
       </div>

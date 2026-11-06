@@ -12,6 +12,8 @@ import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import QuoteForm from "../../components/QuoteForm/QuoteForm";
 
 import { businessInfo } from "../../data/businessInfo";
+import Expertise from "../Expertise/Expertise";
+import ServiceAreas from "../../components/ServiceAreas/ServiceAreas";
 
 import "./Contact.css";
 
@@ -330,8 +332,10 @@ export default function Contact() {
           </div>
 
         </div>
+            
       </section>
-
+      <Expertise />  
+      <ServiceAreas />
     </main>
   );
 }

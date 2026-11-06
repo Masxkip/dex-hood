@@ -26,6 +26,8 @@ import {
   validateQuote,
 } from "./quoteValidation";
 
+
+
 import "./QuoteForm.css";
 
 /* =========================================
@@ -914,7 +916,7 @@ export default function QuoteForm({
           type="submit"
           className="btn btn--primary quote-form__submit"
         >
-          Review Quote Request
+          Submit
 
           <ArrowRight
             size={21}
@@ -923,12 +925,8 @@ export default function QuoteForm({
           />
         </button>
 
-        <p className="quote-form__note">
-          Form preview — checking your details
-          does not submit a request to HoodClean.
-        </p>
-
       </form>
+      
     </div>
   );
 }
