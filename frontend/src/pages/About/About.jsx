@@ -7,6 +7,8 @@ import ChooseUs from "../ChooseUs/ChooseUs";
 import WhyChoose from "../WhyChoose/WhyChoose";
 import HomeReviews from "../Reviews/HomeReviews";
 import FAQSection from "../../components/FAQ/FAQSection";
+
+
 import ServiceAreas from "../../components/ServiceAreas/ServiceAreas";
 import Expertise from "../Expertise/Expertise";
 

@@ -27,6 +27,7 @@ import TermsOfService from "./pages/Legal/TermsOfService";
 import Reviews from "./pages/Reviews/Reviews";
 import Expertise from "./pages/Expertise/Expertise";
 import Contact from "./pages/Contact/Contact";
+import FloatingQuoteWidget from "./components/FloatingQuoteWidget/FloatingQuoteWidget";
 
 /* =========================================
    ROUTES & SCROLL RESET
@@ -154,6 +155,8 @@ export default function App() {
       {/* GLOBAL FOOTER */}
 
       <Footer />
+
+      <FloatingQuoteWidget />
 
     </BrowserRouter>
   );

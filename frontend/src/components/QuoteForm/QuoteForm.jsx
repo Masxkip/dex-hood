@@ -1,5 +1,5 @@
 
-import { useId, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import {
@@ -29,6 +29,7 @@ import {
 
 
 import "./QuoteForm.css";
+import { submitQuote } from "../../services/quoteApi";
 
 /* =========================================
    REUSABLE INPUT FIELD
@@ -224,6 +225,7 @@ function QuoteSelect({
 
 export default function QuoteForm({
   variant = "page",
+  isActive = true,
 }) {
   const idPrefix = useId();
   const formRef = useRef(null);
@@ -241,13 +243,37 @@ export default function QuoteForm({
   const [submitAttempted, setSubmitAttempted] =
     useState(false);
 
-  const [isReady, setIsReady] = useState(false);
+  const [status, setStatus] = useState("idle");
+  const [feedback, setFeedback] = useState("");
+  const [serverErrors, setServerErrors] = useState({});
+  const sendingRef = useRef(false);
+  const feedbackRef = useRef(null);
+  useEffect(() => {
+    if (isActive && (status === "success" || status === "error")) {
+      feedbackRef.current?.focus({ preventScroll: true });
+      feedbackRef.current?.scrollIntoView({ behavior: "auto", block: "center" });
+    }
+  }, [status, isActive]);
+
+  useEffect(() => {
+    if (status !== "success" || !isActive) return;
+    const timer = setTimeout(() => {
+      // Move focus out of the confirmation before removing it.
+      if (feedbackRef.current?.contains(document.activeElement)) {
+        formRef.current?.querySelector('[type="submit"]')?.focus({ preventScroll: true });
+      }
+      setStatus("idle");
+      setFeedback("");
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [status, isActive]);
+
 
   /* =========================================
      DERIVED VALUES
   ========================================= */
 
-  const errors = validateQuote(formData);
+  const errors = { ...validateQuote(formData), ...serverErrors };
 
   const isCommercial =
     formData.serviceCategory === "commercial";
@@ -307,7 +333,17 @@ export default function QuoteForm({
 
     /* RECHECK FORM AFTER USER EDITS */
 
-    setIsReady(false);
+    setStatus("idle");
+    setFeedback("");
+    setServerErrors((previous) => {
+      const next = { ...previous };
+      delete next[name];
+      if (name === "serviceCategory") {
+        delete next.serviceRequired;
+        delete next.companyName;
+      }
+      return next;
+    });
 
     /* RESET SERVICE ERROR VISIBILITY */
 
@@ -352,29 +388,37 @@ export default function QuoteForm({
   /* =========================================
      REVIEW FORM
 
-     PHASE 2: VALIDATION ONLY
-     NO BACKEND REQUEST IS SENT YET.
+     VALIDATE AND SEND TO THE BACKEND.
   ========================================= */
 
-  const handleReview = (event) => {
+  const handleReview = async (event) => {
     event.preventDefault();
-
+    if (sendingRef.current) return;
     const currentErrors = validateQuote(formData);
-
-    const firstInvalidField =
-      Object.keys(currentErrors)[0];
-
+    setServerErrors({});
     setSubmitAttempted(true);
-    setIsReady(!firstInvalidField);
-
-    /* FOCUS FIRST INVALID FIELD */
-
+    setStatus("idle");
+    setFeedback("");
+    const firstInvalidField = Object.keys(currentErrors)[0];
     if (firstInvalidField) {
-      const field = formRef.current?.querySelector(
-        `[name="${firstInvalidField}"]`
-      );
-
-      field?.focus();
+      formRef.current?.querySelector(`[name="${firstInvalidField}"]`)?.focus();
+      return;
+    }
+    sendingRef.current = true;
+    setStatus("sending");
+    try {
+      const result = await submitQuote(formData);
+      setFormData(createInitialQuoteValues());
+      setTouched({});
+      setSubmitAttempted(false);
+      setStatus("success");
+      setFeedback(result.message);
+    } catch (error) {
+      setServerErrors(error.fieldErrors || {});
+      setStatus("error");
+      setFeedback(error.message);
+    } finally {
+      sendingRef.current = false;
     }
   };
 
@@ -429,7 +473,9 @@ export default function QuoteForm({
         aria-label="HoodClean quote request form"
         onSubmit={handleReview}
         noValidate
+        aria-busy={status === "sending"}
       >
+        <fieldset className="quote-form__fieldset" disabled={status === "sending"}>
         <div className="quote-form__grid">
 
           {/* FIRST NAME */}
@@ -880,26 +926,21 @@ export default function QuoteForm({
           </div>
         )}
 
-        {isReady && !hasErrors && (
+        {(status === "success" || status === "error") && (
           <div
-            className="quote-form__feedback quote-form__feedback--ready"
-            role="status"
+            className={`quote-form__feedback quote-form__feedback--${status}`}
+            role={status === "success" ? "status" : "alert"}
+            tabIndex={-1}
+            ref={feedbackRef}
           >
-            <CheckCircle2
-              size={22}
-              aria-hidden="true"
-            />
-
+            {status === "success" ? <CheckCircle2 size={26} aria-hidden="true" /> : <AlertCircle size={24} aria-hidden="true" />}
             <div>
-              <strong>
-                Your form is complete!
-              </strong>
-
+              <strong>{status === "success" ? "Thank you for your enquiry." : "Please check your request."}</strong>
               <p>
-                Your details passed validation.
-                Online submission will be enabled
-                when our backend is connected.
-                No request has been sent yet.
+                {feedback}
+                {status === "success" && (
+                  <>{" "}<Link to="/" className="quote-form__home-link">Go Home <ArrowRight size={16} aria-hidden="true" /></Link></>
+                )}
               </p>
             </div>
           </div>
@@ -908,15 +949,15 @@ export default function QuoteForm({
         {/* =====================================
             REVIEW BUTTON
 
-            Phase 2: Validate only.
-            Phase 4: Actual API submission.
+            Send the validated quote request.
         ===================================== */}
 
         <button
           type="submit"
+          disabled={status === "sending"}
           className="btn btn--primary quote-form__submit"
         >
-          Submit
+          {status === "sending" ? "Sending…" : "Submit Request"}
 
           <ArrowRight
             size={21}
@@ -925,8 +966,10 @@ export default function QuoteForm({
           />
         </button>
 
+        </fieldset>
       </form>
       
     </div>
   );
 }
+
