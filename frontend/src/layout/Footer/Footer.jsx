@@ -101,10 +101,10 @@ function FooterContent() {
 
           <p className="site-footer__description">
             Professional commercial and residential
-            kitchen hood and exhaust cleaning services
+            kitchen cleaning services
             throughout Greater Vancouver and surrounding
             areas. Helping businesses and homeowners
-            maintain cleaner kitchen ventilation systems.
+            maintain cleaner kitchens.
           </p>
 
           <p className="site-footer__tagline">

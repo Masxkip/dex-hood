@@ -1,4 +1,3 @@
-
 export const navigationLinks = [
   {
     label: "Home",
@@ -13,8 +12,8 @@ export const navigationLinks = [
     href: "/services#commercial",
     children: [
       {
-        label: "Commercial Hood Cleaning",
-        href: "/commercial/hood-cleaning",
+        label: "Commercial Deep Kitchen Cleaning",
+        href: "/commercial/deep-kitchen-cleaning",
       },
       {
         label: "Kitchen Exhaust Duct Cleaning",
@@ -35,19 +34,19 @@ export const navigationLinks = [
     href: "/services#residential",
     children: [
       {
-        label: "Residential Range Hood Cleaning",
+        label: "Residential Deep Kitchen Cleaning",
+        href: "/residential/deep-kitchen-cleaning",
+      },
+      {
+        label: "Range Hood & Filter Cleaning",
         href: "/residential/hood-cleaning",
       },
       {
-        label: "Kitchen Exhaust Duct Cleaning",
-        href: "/residential/vent-cleaning",
+        label: "Move In & Move Out Kitchen Cleaning",
+        href: "/residential/move-in-move-out-cleaning",
       },
       {
-        label: "Range Hood Filter Cleaning & Replacement",
-        href: "/residential/degreasing",
-      },
-      {
-        label: "Range Hood Maintenance & Repairs",
+        label: "Routine Kitchen Maintenance & Repairs",
         href: "/residential/maintenance",
       },
     ],

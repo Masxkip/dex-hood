@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
@@ -11,34 +10,34 @@ import "./HomeServices.css";
 
 const commercialServices = [
   {
-    title: "Commercial Hood Cleaning",
-    subtitle: "What's above your kitchen canopy?",
+    title: "Commercial Kitchen Deep Cleaning",
+    subtitle: "A complete clean for a hardworking kitchen.",
     description:
-      "Professional cleaning for commercial kitchen hoods, canopies, and grease-prone surfaces. We help restaurants and food establishments address grease buildup and maintain cleaner kitchen exhaust systems.",
-    href: "/commercial/hood-cleaning",
+      "Complete kitchen deep cleaning for restaurants and food establishments, covering cooking equipment, appliances, hoods, preparation surfaces, cabinets and floors. We tackle accumulated grease, food residue and overlooked areas with methods suited to your surfaces and equipment. Each visit is planned around your cleaning priorities and business hours.",
+    href: "/commercial/deep-kitchen-cleaning",
     image: defaultImage,
   },
   {
     title: "Kitchen Exhaust Duct Cleaning",
     subtitle: "Cleaning beyond the kitchen hood.",
     description:
-      "Grease and residue can accumulate throughout kitchen exhaust ductwork. Our cleaning services focus on accessible ductwork and ventilation passages to help maintain cleaner commercial kitchen systems.",
+      "Cooking grease can collect inside exhaust ducts beyond the areas reached during everyday cleaning. We review your system's layout and access points, then clean reachable internal surfaces and remove accumulated residue. The work is clearly defined beforehand, with any inaccessible sections identified so you can plan further attention where needed.",
     href: "/commercial/duct-cleaning",
     image: defaultImage,
   },
   {
     title: "Grease Filter Cleaning & Exchange",
-    subtitle: "Keep your kitchen filters clean.",
+    subtitle: "Fresh filters for busy cooking environments.",
     description:
-      "Regular grease filter cleaning helps manage cooking residue and maintain kitchen ventilation. We provide filter cleaning and exchange services suited to the ongoing needs of commercial kitchens.",
+      "We clean reusable hood filters and provide compatible filter exchanges to help commercial kitchens manage cooking grease and residue. Each service considers your filter type, condition and cooking volume. From occasional cleaning to recurring exchanges, we arrange filter care around your kitchen's equipment and service schedule.",
     href: "/commercial/filter-cleaning",
     image: defaultImage,
   },
   {
     title: "Kitchen Exhaust Maintenance & Repairs",
-    subtitle: "Keep your exhaust system maintained.",
+    subtitle: "Practical care for your exhaust system.",
     description:
-      "From routine maintenance to addressing common exhaust system issues, we help commercial kitchens manage equipment upkeep and identify components that may require attention or repairs.",
+      "Keep track of exhaust equipment wear and operating concerns with maintenance and repair support tailored to your kitchen. We review accessible components, discuss the issues your team has noticed and explain suitable work before proceeding. Any additional parts or specialist servicing needs are identified to help you plan the next steps.",
     href: "/commercial/maintenance",
     image: defaultImage,
   },
@@ -50,34 +49,34 @@ const commercialServices = [
 
 const residentialServices = [
   {
-    title: "Residential Range Hood Cleaning",
-    subtitle: "A cleaner kitchen starts here.",
+    title: "Residential Kitchen Deep Cleaning",
+    subtitle: "Give the heart of your home a fresh start.",
     description:
-      "Detailed cleaning for residential range hoods, including grease-prone surfaces and accessible components. We help homeowners remove accumulated cooking residue and keep their kitchen hoods cleaner.",
+      "Give your entire kitchen detailed attention, from appliances and cupboards to countertops, sinks, backsplashes and floors. We remove cooking grease and everyday buildup, including residue in accessible corners often missed during routine cleaning. Interior cleaning and preparation requirements are agreed beforehand, with care for your surfaces, equipment and belongings.",
+    href: "/residential/deep-kitchen-cleaning",
+    image: defaultImage,
+  },
+  {
+    title: "Range Hood & Filter Cleaning",
+    subtitle: "Clear away the grease above your stove.",
+    description:
+      "We remove accumulated cooking residue from range hood surfaces, accessible interior components and washable grease filters. Our cleaning approach follows the care requirements of your hood's materials and filter type. This dedicated service gives the area above your stove focused attention between complete kitchen cleans or as part of an agreed visit.",
     href: "/residential/hood-cleaning",
     image: defaultImage,
   },
   {
-    title: "Kitchen Exhaust Duct Cleaning",
-    subtitle: "Care for what's behind your range hood.",
+    title: "Move In & Move Out Kitchen Cleaning",
+    subtitle: "A clean kitchen for your next chapter.",
     description:
-      "Cooking grease and residue can collect inside residential kitchen exhaust ducts. Our cleaning services address accessible ductwork and ventilation passages to help maintain a cleaner exhaust system.",
-    href: "/residential/vent-cleaning",
+      "Prepare your kitchen for moving day with cleaning for appliance interiors, empty cupboards, drawers, surfaces and floors. We also clean range hood surfaces and washable filters where fitted. Planned around property access and the removal of belongings, this service helps you leave a cleaner kitchen or settle into your next home.",
+    href: "/residential/move-in-move-out-cleaning",
     image: defaultImage,
   },
   {
-    title: "Range Hood Filter Cleaning & Replacement",
-    subtitle: "Refresh your kitchen ventilation.",
+    title: "Routine Kitchen Maintenance & Repairs",
+    subtitle: "Care for the kitchen you use every day.",
     description:
-      "We clean reusable range hood filters and assist with replacing suitable worn or disposable filters when needed, helping homeowners maintain their kitchen ventilation equipment.",
-    href: "/residential/degreasing",
-    image: defaultImage,
-  },
-  {
-    title: "Range Hood Maintenance & Repairs",
-    subtitle: "Keep your range hood working properly.",
-    description:
-      "Routine maintenance and attention to common range hood issues can help keep your equipment in better condition. We provide practical upkeep and repair support for residential kitchen hoods.",
+      "Stay on top of everyday kitchen upkeep with maintenance visits and suitable repair support for fixtures, fittings and equipment. We discuss your concerns, review accessible components and explain the proposed work before making agreed adjustments or repairs. Where parts or specialist attention are needed, we help clarify your next steps.",
     href: "/residential/maintenance",
     image: defaultImage,
   },
@@ -123,6 +122,7 @@ function ServiceCard({ service }) {
 
           <span className="home-service-card__more">
             Learn more
+
             <ArrowRight
               size={19}
               strokeWidth={2}
@@ -200,11 +200,10 @@ export default function HomeServices() {
 
       <ServicesSection
         id="commercial"
-        className="home-services home-services--commercial"
         variant="commercial"
-        eyebrow="WHAT WE DO"
-        title="Commercial Hood Cleaning Services"
-        description="From commercial kitchen hood cleaning and exhaust duct maintenance to grease filter exchange and equipment upkeep, HoodClean provides professional kitchen exhaust cleaning solutions for restaurants and commercial food establishments throughout Greater Vancouver. Our goal is to help businesses maintain cleaner, better-maintained kitchen ventilation systems with dependable service and practical maintenance options."
+        eyebrow="FOR BUSINESSES"
+        title="Commercial Kitchen Cleaning Services"
+        description="Care for your entire commercial kitchen with complete kitchen deep cleaning, dedicated exhaust duct cleaning, grease filter exchange and exhaust maintenance and repairs. We serve restaurants and food establishments throughout Greater Vancouver and the surrounding Lower Mainland, planning each service around your equipment, cleaning priorities and operating schedule."
         services={commercialServices}
       />
 
@@ -212,11 +211,10 @@ export default function HomeServices() {
 
       <ServicesSection
         id="residential"
-        className="home-services home-services--residential"
         variant="residential"
         eyebrow="FOR HOMEOWNERS"
-        title="Residential Hood Cleaning Services"
-        description="Your kitchen range hood works hard to manage everyday cooking grease, smoke, and airborne residue. HoodClean provides residential range hood, exhaust duct, and filter cleaning services throughout Greater Vancouver, along with routine maintenance and repair support to help homeowners keep their kitchen ventilation systems in better condition."
+        title="Residential Kitchen Cleaning Services"
+        description="From kitchen deep cleaning and range hood care to moving cleans and routine maintenance and repairs, we help you care for the kitchen you use every day. Serving homes throughout Greater Vancouver and the surrounding Lower Mainland, we tailor each visit to your space, whether you need a fresh start, help with moving or ongoing upkeep."
         services={residentialServices}
       />
     </>

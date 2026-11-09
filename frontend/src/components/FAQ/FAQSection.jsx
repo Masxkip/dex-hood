@@ -1,4 +1,3 @@
-
 import { useId, useState } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -72,8 +71,8 @@ export default function FAQSection({
 
           <p className="faq-section__description">
             {isFaqPage
-              ? "Have questions about our kitchen hood cleaning services? We've put together answers to some of the most common questions about our cleaning process, service areas, quotations, and maintenance options."
-              : "Here are some of the questions our customers frequently ask about our commercial and residential kitchen hood cleaning services. Find helpful answers before getting started."}
+              ? "Have questions about our kitchen cleaning services? We've put together answers to some of the most common questions about our cleaning process, service areas, quotations, and maintenance options."
+              : "Here are some of the questions our customers frequently ask about our commercial and residential kitchen cleaning services. Find helpful answers before getting started."}
           </p>
 
         </div>

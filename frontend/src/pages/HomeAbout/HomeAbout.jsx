@@ -1,5 +1,3 @@
-
-
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
@@ -13,51 +11,49 @@ export default function HomeAbout() {
     >
       <div className="container home-about__container">
 
-        {/* =====================================
-           LEFT - ABOUT HEADING
-        ===================================== */}
+        {/* LEFT - ABOUT HEADING */}
 
         <div className="home-about__left">
-
           <h2
             id="home-about-heading"
             className="heading-section home-about__title"
           >
-            Providing <span className="text-accent">Commercial & Residential Hood </span>
-            Cleaning in Greater Vancouver, BC
+            Providing{" "}
+            <span className="text-accent">
+              Commercial & Residential
+            </span>{" "}
+            Kitchen Cleaning in Greater Vancouver, BC
           </h2>
-
         </div>
 
-        {/* =====================================
-           RIGHT - ABOUT DESCRIPTION
-        ===================================== */}
+        {/* RIGHT - ABOUT DESCRIPTION */}
 
         <div className="home-about__right">
-
-          <p className="home-about__description">
-            At HoodClean, we provide professional
-            commercial and residential kitchen hood,
-            grease filter, and exhaust cleaning
-            services throughout Greater Vancouver
-            and the surrounding Lower Mainland.
-            Our focus is helping businesses and
-            homeowners maintain cleaner, more
-            efficient kitchen ventilation systems.
+          <div className="home-about__text">
+            <p className="home-about__description">
+            At HoodClean, we care for your entire kitchen.
+            From cooking appliances and countertops to
+            cabinets, floors, hoods and exhaust systems,
+            our cleaning services tackle grease, grime
+            and everyday buildup. We serve homes and
+            businesses throughout Greater Vancouver and
+            the surrounding Lower Mainland, bringing
+            careful attention to every surface and
+            hard to reach corner.
           </p>
 
           <p className="home-about__description">
-            From restaurants and commercial kitchens
-            to residential properties, we understand
-            that every kitchen has different cleaning
-            requirements. We tailor our services
-            to your equipment, schedule, and specific
-            needs, delivering reliable cleaning
-            solutions with attention to detail
-            and customer satisfaction.
+            Whether it is a busy restaurant kitchen or
+            the heart of your home, we shape our service
+            around your space, equipment and cleaning
+            needs. With scheduling that works around
+            your routine and care for the details,
+            we leave your kitchen fresh, inviting
+            and ready for whatever is cooking next.
           </p>
+          </div>
 
-          {/* ===== CTA BUTTON ===== */}
+          {/* CTA BUTTON */}
 
           <Link
             to="/about"
@@ -71,7 +67,6 @@ export default function HomeAbout() {
               aria-hidden="true"
             />
           </Link>
-
         </div>
 
       </div>

@@ -1,4 +1,3 @@
-
 import { Check } from "lucide-react";
 
 import whyChooseImage from "../../assets/h1.jpg";
@@ -11,21 +10,19 @@ import "./WhyChoose.css";
 
 const reasons = [
   {
-    title: "Cleaning Services You Can Rely On:",
+    title: "A Standard of Care You Can See:",
     description:
-      "We provide commercial and residential kitchen hood cleaning throughout Greater Vancouver, with careful attention to grease buildup, kitchen ventilation, and the condition of your equipment.",
+      "The difference is in the details: grease lifted from cooking surfaces, refreshed cabinet fronts and attention to corners that are easily overlooked. We bring that same care to every kitchen, treating your surfaces, appliances and equipment with respect.",
   },
-
   {
-    title: "Comprehensive Cleaning Solutions:",
+    title: "More Than a Surface Clean:",
     description:
-      "From kitchen hood and canopy cleaning to grease filters and accessible exhaust ducts, we tailor our cleaning approach to your kitchen's specific equipment and maintenance requirements.",
+      "From appliance interiors and storage spaces to countertops, floors, hoods and exhaust systems, we address the buildup that everyday cleaning leaves behind. Your service is shaped around your kitchen's condition and the areas that need attention.",
   },
-
   {
-    title: "A Customer-Focused Approach:",
+    title: "Your Kitchen, Your Priorities:",
     description:
-      "Every kitchen is different. We work to understand your cleaning needs, discuss the scope of work, and coordinate appointments around your schedule.",
+      "We listen to what matters to you, explain the work involved and arrange a visit that fits your routine. Whether you run a busy restaurant or are caring for your home, you can expect clear communication and a thoughtful approach from start to finish.",
   },
 ];
 
@@ -34,10 +31,10 @@ const reasons = [
 ========================================= */
 
 const benefits = [
-  "Professional commercial and residential hood cleaning",
-  "Attention to detail and careful equipment handling",
-  "Cleaning solutions tailored to your kitchen",
-  "Flexible scheduling and clear communication",
+  "Professional care for home and commercial kitchens",
+  "Detailed attention to visible and overlooked areas",
+  "Cleaning methods suited to your surfaces and equipment",
+  "Thoughtful scheduling and straightforward communication",
 ];
 
 /* =========================================
@@ -52,9 +49,7 @@ export default function WhyChoose() {
     >
       <div className="why-choose__container">
 
-        {/* =====================================
-           LEFT - CONTENT
-        ===================================== */}
+        {/* LEFT CONTENT */}
 
         <div className="why-choose__content">
 
@@ -77,17 +72,14 @@ export default function WhyChoose() {
           {/* SHORT DESCRIPTION */}
 
           <p className="why-choose__intro">
-            Professional kitchen hood and exhaust
-            cleaning, tailored to your equipment
-            and built around your schedule.
+            From the surfaces you see to the corners
+            you rarely reach, we bring a careful eye
+            and a professional touch to your kitchen.
           </p>
 
-          {/* =====================================
-             REASONS
-          ===================================== */}
+          {/* REASONS */}
 
           <div className="why-choose__reasons">
-
             {reasons.map((reason) => (
               <p
                 className="why-choose__reason"
@@ -99,23 +91,16 @@ export default function WhyChoose() {
                 {reason.description}
               </p>
             ))}
-
           </div>
 
-          {/* =====================================
-             BENEFITS CHECKLIST
-          ===================================== */}
+          {/* BENEFITS CHECKLIST */}
 
           <ul className="why-choose__benefits">
-
             {benefits.map((benefit) => (
               <li
                 className="why-choose__benefit"
                 key={benefit}
               >
-
-                {/* OUTLINED CHECK ICON */}
-
                 <span
                   className="why-choose__check"
                   aria-hidden="true"
@@ -126,33 +111,25 @@ export default function WhyChoose() {
                   />
                 </span>
 
-                {/* BENEFIT TEXT */}
-
                 <span className="why-choose__benefit-text">
                   {benefit}
                 </span>
-
               </li>
             ))}
-
           </ul>
 
         </div>
 
-        {/* =====================================
-           RIGHT - IMAGE
-        ===================================== */}
+        {/* RIGHT IMAGE */}
 
         <div className="why-choose__media">
-
           <img
             src={whyChooseImage}
-            alt="Commercial kitchen with professional stainless steel equipment and ventilation"
+            alt="Commercial kitchen with stainless steel equipment and ventilation"
             className="why-choose__image"
             loading="lazy"
             decoding="async"
           />
-
         </div>
 
       </div>

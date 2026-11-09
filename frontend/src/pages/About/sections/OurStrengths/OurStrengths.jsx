@@ -6,22 +6,22 @@ const strengths = [
   {
     title: "Professional Cleaning Solutions",
     description:
-      "Kitchen hood and exhaust cleaning services designed to address grease buildup and ventilation maintenance needs.",
+      "We assess your kitchen and tailor our cleaning to its surfaces, appliances and equipment, including hoods, grease filters and exhaust systems.",
   },
   {
     title: "Serving Greater Vancouver",
     description:
-      "Commercial and residential hood cleaning services for customers throughout Vancouver and surrounding communities.",
+      "We provide complete kitchen cleaning for homes and businesses throughout Greater Vancouver and surrounding communities, with clear communication from enquiry to completion.",
   },
   {
     title: "Cleanliness and Safety",
     description:
-      "Helping maintain cleaner kitchen environments through careful attention to grease-prone ventilation areas.",
+      "We help maintain cleaner kitchen environments by addressing grease, food residue and buildup across preparation areas, cooking equipment, floors and ventilation systems.",
   },
   {
     title: "Flexible Cleaning Services",
     description:
-      "Practical cleaning options for one-time service requirements and recurring kitchen maintenance.",
+      "From a single deep clean to recurring visits, we plan our service around your priorities, kitchen use and schedule, with the scope of work agreed before we begin.",
   },
 ];
 

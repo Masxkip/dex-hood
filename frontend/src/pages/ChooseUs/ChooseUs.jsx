@@ -1,4 +1,3 @@
-
 import "./ChooseUs.css";
 
 export default function ChooseUs() {
@@ -9,53 +8,61 @@ export default function ChooseUs() {
     >
       <div className="container choose-us__container">
 
-        {/* ===== MAIN HEADING ===== */}
+        {/* MAIN HEADING */}
 
         <h2
           id="choose-us-heading"
           className="heading-section choose-us__title"
         >
           Choose HoodClean for Professional Kitchen
-          Hood Cleaning in Greater Vancouver
+          Cleaning Services in Greater Vancouver
         </h2>
 
-        {/* ===== DESCRIPTION CONTENT ===== */}
+        {/* DESCRIPTION CONTENT */}
 
         <div className="choose-us__content">
 
           <p className="choose-us__description">
-            Maintaining a clean kitchen involves more than
-            keeping cooking surfaces spotless. At HoodClean,
-            we focus on the hood and exhaust components that
-            help manage cooking grease, smoke, and airborne
-            residue. Our commercial and residential kitchen
-            hood cleaning services are designed to help
-            businesses and homeowners throughout Greater
-            Vancouver maintain cleaner kitchen environments.
+            A kitchen should feel as inviting as the
+            meals made in it. At HoodClean, we bring
+            professional care to homes and commercial
+            kitchens throughout Greater Vancouver,
+            lifting stubborn grease, clearing away
+            cooking residue and refreshing the spaces
+            you rely on every day. From inside appliances
+            and cupboards to countertops, sinks, floors
+            and the hood above your stove, our attention
+            extends well beyond the obvious surfaces.
           </p>
 
           <p className="choose-us__description">
-            Every kitchen has different equipment, ventilation
-            systems, and cleaning requirements. From busy
-            restaurant kitchens and food preparation facilities
-            to residential range hoods, we approach each
-            service with attention to the condition and
-            accessibility of the equipment. Our cleaning
-            process focuses on removing grease and residue
-            from the areas included in the agreed scope
-            of work.
+            What makes our approach personal is the time
+            we take to understand your kitchen. We look
+            at how the space is used, which areas need
+            extra attention and how to care for its
+            different materials and equipment. Whether
+            we are working around a restaurant's service
+            hours or a household's daily routine, we
+            agree on the details beforehand and approach
+            the work with care for your property.
+            Dedicated hood, filter and exhaust services
+            are also available for kitchens that need
+            more focused attention.
           </p>
 
           <p className="choose-us__description">
-            We understand that maintaining your kitchen
-            should be convenient and straightforward.
-            That's why we emphasize clear communication,
-            careful service planning, and practical cleaning
-            solutions suited to your needs. Whether you're
-            arranging a one-time cleaning or discussing
-            ongoing kitchen exhaust maintenance, HoodClean
-            is here to help you take the next step toward
-            a cleaner kitchen.
+            Good service should feel reassuring from
+            the first conversation to the final
+            walkthrough. We keep you informed, explain
+            what your visit includes and take time to
+            review the result with you. Whether you are
+            planning a kitchen deep clean, preparing
+            for moving day or looking after ongoing
+            maintenance and repairs, HoodClean makes
+            the process straightforward. We want you
+            to enjoy a kitchen that feels cared for,
+            with a team you feel confident welcoming
+            back.
           </p>
 
         </div>

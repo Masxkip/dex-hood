@@ -5,8 +5,8 @@ export default function ResidentialServiceDetail() {
   return (
     <ServiceDetail
       category="residential"
-      heroTitle="Residential Hood Cleaning Services"
-      heroDescription="Professional residential range hood, kitchen exhaust duct, filter cleaning, and maintenance services to help homeowners maintain cleaner kitchens throughout Greater Vancouver."
+      heroTitle="Residential Kitchen Cleaning Services"
+      heroDescription="Professional deep kitchen cleaning, range hood care, moving cleans and repairs for homes across Greater Vancouver."
     />
   );
 }

@@ -85,7 +85,7 @@ export default function ServiceDetail({
       <Hero2
         title={heroTitle}
         description={heroDescription}
-        buttonText="Schedule a Consultation"
+        buttonText="Request a Quote"
         buttonLink="/contact"
       />
 

@@ -127,7 +127,7 @@ export default function FloatingQuoteWidget() {
         onClick={() => setPhase("open")}
       >
         <MessageSquareText size={23} strokeWidth={1.8} aria-hidden="true" />
-        <span>Request a Quote</span>
+        <span>Contact Us</span>
       </button>
 
       <dialog

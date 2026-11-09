@@ -11,41 +11,45 @@ export default function AboutIntro() {
             <div className="about-intro__highlight">
               <p>
                 At HoodClean, we provide professional
-                commercial and residential kitchen hood
-                cleaning services throughout Greater
-                Vancouver, helping our customers maintain
-                cleaner and better-maintained kitchens.
+                commercial and residential kitchen
+                cleaning throughout Greater Vancouver.
+                We care for the entire kitchen, including
+                its appliances, surfaces, hoods and exhaust
+                systems, helping our customers maintain
+                cleaner spaces for cooking and everyday use.
               </p>
             </div>
 
             <p>
-              We understand the importance of keeping
-              kitchen ventilation systems clean and
-              properly maintained. From busy commercial
-              restaurants to residential properties,
-              our services are designed to address
-              grease buildup and kitchen exhaust
-              cleaning needs.
-              We understand the importance of keeping
-              kitchen ventilation systems clean and
-              properly maintained. From busy commercial
-              restaurants to residential properties,
-              our services are designed to address
-              grease buildup and kitchen exhaust
-              cleaning needs.
+              We understand that keeping a kitchen clean
+              takes more than wiping down visible surfaces.
+              Grease, food residue and everyday buildup
+              can collect on equipment, inside cabinets
+              and in hard to reach areas. From busy
+              restaurant kitchens to family homes, we
+              approach each space with care for its
+              surfaces, equipment and the people who
+              depend on it.
             </p>
 
             <p>
               Our approach is straightforward: understand
-              the condition of each kitchen, explain
-              the work required, and provide practical
-              cleaning solutions tailored to the property.
+              the condition of your kitchen, discuss your
+              priorities and explain the work required.
+              We tailor the cleaning to your property,
+              from appliances, countertops and floors
+              to grease filters, hoods and exhaust
+              systems, with a clear scope agreed
+              before we begin.
             </p>
 
             <p>
               We aim to build lasting relationships
               through dependable service, clear
-              communication, and attention to detail.
+              communication and attention to detail.
+              From your first enquiry to the completed
+              clean, we want you to feel informed and
+              confident in the care your kitchen receives.
             </p>
           </div>
 
@@ -56,32 +60,37 @@ export default function AboutIntro() {
             </h2>
 
             <p>
-              A clean kitchen exhaust system supports
-              a better working environment and helps
-              reduce grease accumulation in areas
-              that can be difficult to reach during
-              routine kitchen cleaning.
+              A clean kitchen supports a more hygienic
+              environment for preparing food and a more
+              comfortable space to work in. Our cleaning
+              addresses grease and residue across the
+              kitchen, giving attention to everyday
+              contact surfaces as well as equipment
+              and ventilation areas that need deeper care.
             </p>
 
             <ul className="about-intro__list">
               <li>
-                Helping reduce grease buildup in
-                kitchen ventilation systems.
+                Removing grease and food residue from
+                kitchen appliances, surfaces and equipment.
               </li>
               <li>
-                Supporting cleaner kitchen working
-                environments.
+                Addressing grease buildup in hoods,
+                filters and kitchen exhaust systems.
               </li>
               <li>
-                Providing practical cleaning services
-                suited to different kitchen needs.
+                Helping maintain cleaner floors, work
+                areas and spaces that are difficult
+                to reach during everyday cleaning.
               </li>
             </ul>
 
             <p>
-              Whether you require a one-time cleaning
-              or ongoing maintenance, our goal is to
-              make the process clear and convenient.
+              Whether you require a single deep clean
+              or regular cleaning visits, we explain
+              the scope of our service and arrange
+              the work around your kitchen's needs
+              to make the process clear and convenient.
             </p>
 
             <h2 className="about-intro__heading">
@@ -90,17 +99,19 @@ export default function AboutIntro() {
 
             <p>
               We serve commercial and residential
-              customers throughout Greater Vancouver,
+              customers throughout Greater Vancouver
+              and the surrounding Lower Mainland,
               including restaurants, commercial food
-              establishments, property managers,
+              establishments, property managers
               and homeowners.
             </p>
 
             <p>
-              Every kitchen is different, which is why
-              we focus on understanding each customer's
-              requirements before recommending a
-              cleaning approach.
+              Every kitchen is different. We take time
+              to understand how yours is used, the
+              equipment it contains and your cleaning
+              requirements before recommending an
+              approach that suits your space and routine.
             </p>
           </div>
 

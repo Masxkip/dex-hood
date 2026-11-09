@@ -16,7 +16,7 @@ export default function QuoteCTA() {
           {/* ===== EYEBROW ===== */}
 
           <span className="eyebrow quote-cta__eyebrow">
-            Commercial & Residential Hood Cleaning
+            Commercial & Residential Kitchen Cleaning
           </span>
 
           {/* ===== HEADING ===== */}
@@ -32,8 +32,7 @@ export default function QuoteCTA() {
           {/* ===== DESCRIPTION ===== */}
 
           <p className="quote-cta__description">
-            Professional kitchen hood and exhaust cleaning
-            services throughout Greater Vancouver.
+            Professional kitchen cleaning services throughout Greater Vancouver.
             Tell us what you need, and we'll help
             you get started.
           </p>

@@ -1,4 +1,3 @@
-
 import { useId, useState } from "react";
 import { Plus, Minus } from "lucide-react";
 
@@ -15,7 +14,7 @@ const expertiseItems = [
     number: "01",
     title: "Detailed Cleaning Approach",
     description:
-      "Every kitchen has different ventilation equipment and cleaning requirements. We focus on accessible hood interiors, grease filters, and exhaust components included in the agreed scope of work, with careful attention to grease buildup and residue.",
+      "Every kitchen has different surfaces, equipment and cleaning requirements. We focus on appliances, cabinets, countertops, floors, hoods and exhaust components included in the agreed scope of work, with careful attention to grease buildup and residue.",
   },
   {
     number: "02",
@@ -27,7 +26,7 @@ const expertiseItems = [
     number: "03",
     title: "Commercial & Residential Services",
     description:
-      "From restaurant kitchens and commercial food preparation facilities to residential range hoods, HoodClean provides cleaning services tailored to different kitchen environments, equipment configurations, and maintenance needs.",
+      "From restaurant kitchens and commercial food preparation facilities to home kitchens, HoodClean provides cleaning services tailored to different kitchen environments, equipment configurations, and maintenance needs.",
   },
   {
     number: "04",
@@ -94,7 +93,7 @@ export default function Expertise() {
             id={`${baseId}-heading`}
             className="heading-section expertise__title"
           >
-            Professional Kitchen Hood Cleaning
+            Professional Kitchen Cleaning
             Built Around Your Needs
           </h2>
 
@@ -102,8 +101,8 @@ export default function Expertise() {
 
           <p className="expertise__intro">
             Helping Greater Vancouver businesses
-            and homeowners maintain cleaner kitchen
-            hood and exhaust systems.
+            and homeowners maintain cleaner kitchens
+            with care for their surfaces and equipment.
           </p>
 
           {/* =====================================

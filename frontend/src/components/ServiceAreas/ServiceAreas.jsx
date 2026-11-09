@@ -43,7 +43,7 @@ const defaultLocations = [
 export default function ServiceAreas({
   eyebrow = "Service Areas",
   title = "Servicing Greater Vancouver & Surrounding Areas",
-  description = "HoodClean provides professional commercial and residential kitchen hood cleaning, grease filter cleaning, and accessible exhaust cleaning services throughout Greater Vancouver and the surrounding Lower Mainland. We help restaurants, commercial kitchens, businesses, and homeowners manage grease buildup and maintain cleaner kitchen ventilation systems.",
+  description = "HoodClean provides professional commercial and residential kitchen deep cleaning, hood and grease filter cleaning, and accessible exhaust cleaning services throughout Greater Vancouver and the surrounding Lower Mainland. We help restaurants, commercial kitchens, businesses, and homeowners manage grease buildup and maintain cleaner kitchen ventilation systems.",
   locations = defaultLocations,
   backgroundImage = defaultBackgroundImage,
 }) {

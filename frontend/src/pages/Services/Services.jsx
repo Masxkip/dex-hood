@@ -14,9 +14,9 @@ export default function Services() {
       ===================================== */}
 
       <Hero2
-        title="What We Do To Help Ensure Comfort"
-        description="From commercial kitchen exhaust cleaning to residential range hood maintenance, HoodClean provides professional cleaning solutions to help keep kitchens cleaner and better maintained throughout Greater Vancouver."
-        buttonText="Schedule a Consultation"
+        title="What We Do"
+        description="Complete kitchen cleaning, hood and exhaust care, maintenance and repairs for homes and businesses across Greater Vancouver."
+        buttonText="Request a Quote"
         buttonLink="/contact"
       />
 

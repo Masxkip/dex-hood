@@ -7,11 +7,8 @@ import "./Hero.css";
    CLOUDINARY IMAGE
 ========================================= */
 
-// Reads your cloud name from the frontend .env file.
 const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
 
-// Replaces the previous local h1.jpg import.
-// Public ID: h1
 const heroImage = `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto/h1`;
 
 /* =========================================
@@ -48,8 +45,8 @@ export default function Hero() {
           {/* ===== HERO HEADING ===== */}
 
           <h1 className="heading-hero home-hero__title">
-            Pristine Commercial & Residential Hood
-            Cleaning In{" "}
+            Exceptional Commercial & Residential Kitchen
+            Cleaning in{" "}
             <span className="text-accent">
               Vancouver, BC
             </span>
@@ -58,10 +55,11 @@ export default function Hero() {
           {/* ===== DESCRIPTION ===== */}
 
           <p className="home-hero__description">
-            Proudly serving Greater Vancouver & surrounding
-            areas with professional kitchen hood and exhaust
-            cleaning services.
-          </p>
+          From appliances and countertops to hoods, exhaust systems
+          and floors, we clean your entire kitchen with care.
+          Serving homes and businesses across Greater Vancouver
+          and surrounding areas.
+        </p>
 
           {/* ===== CTA BUTTONS ===== */}
 
