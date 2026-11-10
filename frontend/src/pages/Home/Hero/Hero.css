@@ -1,11 +1,14 @@
-
 /* ===== HOME HERO ===== */
 
 .home-hero {
   position: relative;
   min-height: 650px;
+
   display: flex;
   align-items: center;
+
+  /* Space for the transparent navbar */
+  padding-top: calc(var(--header-height) + 35px);
 
   background-color: var(--color-primary);
   background-position: center;
@@ -53,6 +56,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+
   gap: 16px;
   margin-top: 36px;
 }
@@ -61,8 +65,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
 
+  gap: 14px;
   min-width: 210px;
 }
 
@@ -75,16 +79,27 @@
   transform: translateX(4px);
 }
 
-/* ===== TABLET ===== */
+/* ===== NAVBAR SPACING ===== */
+
+@media (max-width: 1100px) {
+  .home-hero {
+    padding-top: 110px;
+  }
+}
+
+/* ===== TABLET & MOBILE ===== */
 
 @media (max-width: 768px) {
   .home-hero {
     min-height: 580px;
+    align-items: flex-start;
+
     background-position: 60% center;
   }
 
   .home-hero__container {
-    padding-block: 85px;
+    padding-top: 30px;
+    padding-bottom: 65px;
   }
 
   .home-hero__title {
@@ -92,25 +107,35 @@
   }
 }
 
-/* ===== IPHONE & MOBILE ===== */
+/* ===== IPHONE & SMALL MOBILE ===== */
 
 @media (max-width: 480px) {
   .home-hero {
     min-height: 570px;
+    padding-top: 100px;
+
     background-position: 58% center;
   }
 
   .home-hero__container {
-    padding-block: 70px;
+    /* Reduce this value to bring content closer */
+    padding-top: 20px;
+    padding-bottom: 55px;
   }
 
   .home-hero__title {
     margin: 20px 0 24px;
   }
 
+  .home-hero__description {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
   .home-hero__actions {
     flex-direction: column;
     align-items: stretch;
+
     gap: 14px;
     margin-top: 34px;
   }
@@ -120,8 +145,6 @@
     min-width: 0;
   }
 }
-
-/* ===== DESKTOP ADJUSTMENTS ===== */
 
 /* ===== DESKTOP HERO SPACING ===== */
 
@@ -135,33 +158,5 @@
     padding-top: 65px;
     padding-bottom: 100px;
     transform: none;
-  }
-}
-
-/* ===== MOBILE ADJUSTMENTS ===== */
-
-@media (max-width: 480px) {
-  .home-hero__description {
-    font-size: 18px;
-    line-height: 1.4;
-  }
-}
-
-
-/* Allow the transparent navbar to overlay the hero */
-
-.home-hero {
-  padding-top: calc(var(--header-height) + 35px);
-}
-
-@media (max-width: 1100px) {
-  .home-hero {
-    padding-top: 110px;
-  }
-}
-
-@media (max-width: 480px) {
-  .home-hero {
-    padding-top: 100px;
   }
 }

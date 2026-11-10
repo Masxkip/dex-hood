@@ -7,9 +7,12 @@ import "./Hero.css";
    CLOUDINARY IMAGE
 ========================================= */
 
-const cloudName = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
+const cloudName =
+  import.meta.env.VITE_CLOUDINARY_CLOUD_NAME?.trim();
 
-const heroImage = `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto/h1`;
+const heroImage = cloudName
+  ? `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q_auto/h1`
+  : null;
 
 /* =========================================
    BUSINESS PHONE NUMBER
@@ -18,52 +21,62 @@ const heroImage = `https://res.cloudinary.com/${cloudName}/image/upload/f_auto,q
 const PHONE_NUMBER = "+16045550147";
 const PHONE_DISPLAY = "(604) 555-0147";
 
+/* =========================================
+   HERO OVERLAY
+========================================= */
+
+const heroOverlay = `
+  linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.78) 0%,
+    rgba(0, 0, 0, 0.62) 50%,
+    rgba(0, 0, 0, 0.45) 100%
+  )
+`;
+
 export default function Hero() {
   return (
     <section
       className="home-hero"
       style={{
-        backgroundImage: `
-          linear-gradient(
-            90deg,
-            rgba(0, 0, 0, 0.78) 0%,
-            rgba(0, 0, 0, 0.62) 50%,
-            rgba(0, 0, 0, 0.45) 100%
-          ),
-          url("${heroImage}")
-        `,
+        backgroundImage: heroImage
+          ? `${heroOverlay}, url("${heroImage}")`
+          : heroOverlay,
       }}
     >
       <div className="container home-hero__container">
         <div className="home-hero__content">
-          {/* ===== EYEBROW ===== */}
+
+          {/* EYEBROW */}
 
           <span className="eyebrow home-hero__eyebrow">
             Vancouver's #1
           </span>
 
-          {/* ===== HERO HEADING ===== */}
+          {/* HERO HEADING */}
 
           <h1 className="heading-hero home-hero__title">
-            Exceptional Commercial & Residential Kitchen
+            Commercial & Residential Kitchen
             Cleaning in{" "}
             <span className="text-accent">
               Vancouver, BC
             </span>
           </h1>
 
-          {/* ===== DESCRIPTION ===== */}
+          {/* DESCRIPTION */}
 
           <p className="home-hero__description">
-          From appliances and countertops to hoods, exhaust systems
-          and floors, we clean your entire kitchen with care.
-          Serving homes and businesses across Greater Vancouver
-          and surrounding areas.
-        </p>
+            From appliances and countertops to hoods,
+            exhaust systems and floors, we clean your
+            entire kitchen with care. Serving homes
+            and businesses across Greater Vancouver
+            and surrounding areas.
+          </p>
 
-          {/* ===== CTA BUTTONS ===== */}
+          {/* CTA BUTTONS */}
 
           <div className="home-hero__actions">
+
             {/* REQUEST A QUOTE */}
 
             <Link
@@ -75,6 +88,7 @@ export default function Hero() {
               <ArrowRight
                 size={21}
                 strokeWidth={2.4}
+                aria-hidden="true"
               />
             </Link>
 
@@ -88,10 +102,12 @@ export default function Hero() {
               <Phone
                 size={21}
                 strokeWidth={2.4}
+                aria-hidden="true"
               />
 
               <span>{PHONE_DISPLAY}</span>
             </a>
+
           </div>
         </div>
       </div>
